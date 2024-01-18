@@ -32,7 +32,7 @@ KEY ={
 
 # Escribe aquí el ID de tu documento:
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
-RANGE_NAME_GET="Fill F!A:O"
+RANGE_NAME_GET="Fill!A:O"
 
 creds = None
 creds = service_account.Credentials.from_service_account_info(KEY, scopes=SCOPES)

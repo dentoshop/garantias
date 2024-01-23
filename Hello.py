@@ -49,6 +49,7 @@ result = (
 values = result.get('values',[])
 print(values)
 df=pd.DataFrame(values,columns=values[0])
+'''
 print(df)
 df_fix=df[df["ID"] != '']
 print(df_fix)
@@ -185,3 +186,5 @@ if password==str(st.secrets["password"]):
 
     if on:
         st.table(df_fix[-10:])
+
+'''

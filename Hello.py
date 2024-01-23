@@ -31,7 +31,7 @@ KEY ={
 }
 
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
-RANGE_NAME_GET="Fill!A:O"
+RANGE_NAME_GET="Fill!A:W"
 
 creds = None
 creds = service_account.Credentials.from_service_account_info(KEY, scopes=SCOPES)
@@ -47,6 +47,6 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
-st.write(values)
+st.write(pd.dataframe(values))
 
 

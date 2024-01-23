@@ -59,14 +59,11 @@ Emp=st.button("Empresa")
 if Emp:
 
     passw = st.text_input("Contraseña:",type="password")
-
     if passw:
-
         if passw == st.secrets["password"]:
-
+            global password
             password=True
         else:
-
             st.write("Contraseña incorrecta")
 
 if password:

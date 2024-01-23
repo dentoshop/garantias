@@ -64,19 +64,19 @@ with empp:
 
         with tab1:
     
-        #a    
+            st.write("a")    
 
         with tab2:
             
-        #a    
+           st.write("a")   
 
         with tab3:
             
-        #a   
+            st.write("a")  
 
         with tab4:
             
-        #a
+            st.write("a")  
 
     else: "Contraseña incorrecta"
             

@@ -47,6 +47,6 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
-print(values)
+st.write(values)
 
 

@@ -30,7 +30,6 @@ KEY ={
     "universe_domain": "googleapis.com"
 }
 
-# Escribe aquí el ID de tu documento:
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
 RANGE_NAME_GET="Fill!A:O"
 
@@ -49,7 +48,7 @@ result = (
 # Extraemos values del resultado
 values = result.get('values',[])
 df=pd.DataFrame(values[1:],columns=values[0])
-df_fix=df[df["Fecha"] != '']
+df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+3
 
@@ -63,7 +62,7 @@ categorias=pd.DataFrame(categorias[1:],columns=categorias[0])
 
 
 # %%
-RANGE_NAME_FILL=f"Fill F!B{maxrow}"
+RANGE_NAME_FILL=f"Fill!A{maxrow}"
 
 
 # %%

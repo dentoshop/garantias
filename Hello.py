@@ -48,5 +48,5 @@ result = (
 # Extraemos values del resultado
 values = result.get('values',[])
 print(values)
-df=pd.DataFrame(values,columns=values[0])
+
 

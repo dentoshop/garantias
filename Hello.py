@@ -52,39 +52,32 @@ df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+3
 
-Client=st.button("Seguimiento - Cliente")
-Emp=st.button("Empresa")
+clien, empp = st.tabs(["Cliente", "Empresa"])
 
-
-if Emp:
-
-    passw = st.text_input("Contraseña:",type="password")
-    if passw:
-        if passw == st.secrets["password"]:
-            st.session_state.password=True
-        else:
-            st.write("Contraseña incorrecta")
-            st.session_state.password=False
-
-if st.session_state.password:
+with clien:
+    st.header("Seguimiento - Cliente")
+with empp:
+    st.header("Empresa")
+    passw=st.text_input("Contraseña:",type="password")
     
-    tab1, tab2, tab3, tab4 = st.tabs(["Cat", "Dog", "Owl","a"])
+    if passw==st.secrets["password"]:
+        tab1, tab2, tab3, tab4 = st.tabs(["Cat", "Dog", "Owl","a"])
 
-    with tab1:
-        st.header("A cat")
-        st.image("https://static.streamlit.io/examples/cat.jpg")
+        with tab1:
+            st.header("A cat")
+            st.image("https://static.streamlit.io/examples/cat.jpg")
 
-    with tab2:
-        st.header("A dog")
-        st.image("https://static.streamlit.io/examples/dog.jpg")
+        with tab2:
+            st.header("A dog")
+            st.image("https://static.streamlit.io/examples/dog.jpg")
 
-    with tab3:
-        st.header("An owl")
-        st.image("https://static.streamlit.io/examples/owl.jpg")
+        with tab3:
+            st.header("An owl")
+            st.image("https://static.streamlit.io/examples/owl.jpg")
 
-    with tab4:
-        st.header("An a")
-        st.image("https://static.streamlit.io/examples/owl.jpg")
+        with tab4:
+            st.header("An a")
+            st.image("https://static.streamlit.io/examples/owl.jpg")
 
             
 

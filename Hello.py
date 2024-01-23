@@ -61,13 +61,12 @@ if Emp:
     passw = st.text_input("Contraseña:",type="password")
     if passw:
         if passw == st.secrets["password"]:
-            global password
-            password=True
+            st.session_state.password=True
         else:
             st.write("Contraseña incorrecta")
-            password=False
+            st.session_state.password=False
 
-if password:
+if st.session_state.password:
     
     tab1, tab2, tab3, tab4 = st.tabs(["Cat", "Dog", "Owl","a"])
 

@@ -65,10 +65,11 @@ if Emp:
             password=True
         else:
             st.write("Contraseña incorrecta")
+            password=False
 
 if password:
     
-    tab1, tab2, tab3, tab4 = st.columns(4)
+    tab1, tab2, tab3, tab4 = st.tabs(["Cat", "Dog", "Owl","a"])
 
     with tab1:
         st.header("A cat")

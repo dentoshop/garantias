@@ -47,6 +47,6 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
-hola=pd.DataFrame(values)
+hola=pd.DataFrame(values[1:], columns=values[0])
 print(hola)
 

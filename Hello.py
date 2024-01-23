@@ -47,5 +47,5 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
-print(values)
+print(values[:])
 

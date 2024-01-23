@@ -60,6 +60,8 @@ if Emp:
 
     passw = st.text_input("Contraseña:",type="password")
 
+st.write("passw")
+
 if passw == st.secrets["password"]:
 
     st.write("hola")

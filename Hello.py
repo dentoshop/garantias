@@ -52,7 +52,7 @@ df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+3
 
-clien, empp = st.tabs(["Seguimiento - Cliente", "Empresa"])
+empp, clien = st.tabs(["Empresa","Seguimiento - Cliente"])
 
 with clien:
     st.write("")

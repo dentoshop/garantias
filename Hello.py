@@ -51,5 +51,29 @@ df=pd.DataFrame(values[1:], columns=values[0])
 df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+3
-st.write(maxrow)
+
+Client=st.button("Seguimiento - Cliente")
+Emp=st.button("Empresa")
+
+
+if Emp:
+   
+    tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificacion", "Status", "d"])
+
+    with tab1:
+        st.header("A cat")
+        st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+
+    with tab2:
+        st.header("A dog")
+        st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
+
+    with tab3:
+        st.header("An owl")
+        st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+
+    with tab4:
+        st.header("An owl")
+        st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+
 

@@ -61,6 +61,8 @@ if Emp:
     passw = st.text_input("Contraseña:",type="password")
 
 if passw == st.secrets["password"]:
+
+    st.write("hola")
    
     tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificacion", "Status", "d"])
 
@@ -79,6 +81,7 @@ if passw == st.secrets["password"]:
     with tab4:
         st.header("An a")
         st.image("https://static.streamlit.io/examples/owl.jpg")
+
 
 else:
 

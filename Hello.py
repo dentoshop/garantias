@@ -47,6 +47,6 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
-#st.write(pd.dataframe(values))
-
+hola=pd.DataFrame(values)
+print(hola)
 

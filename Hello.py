@@ -60,23 +60,23 @@ with empp:
     passw=st.text_input("Contraseña:",type="password")
 
     if passw==st.secrets["password"]:
-        tab1, tab2, tab3, tab4 = st.tabs(["Cat", "Dog", "Owl","a"])
+        tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificar", "Status",""])
 
         with tab1:
-            st.header("A cat")
-            st.image("https://static.streamlit.io/examples/cat.jpg")
+    
+            
 
         with tab2:
-            st.header("A dog")
-            st.image("https://static.streamlit.io/examples/dog.jpg")
+            
+            
 
         with tab3:
-            st.header("An owl")
-            st.image("https://static.streamlit.io/examples/owl.jpg")
+            
+            
 
         with tab4:
-            st.header("An a")
-            st.image("https://static.streamlit.io/examples/owl.jpg")
+            
+            
     else: "Contraseña incorrecta"
             
 

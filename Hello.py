@@ -52,14 +52,13 @@ df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+3
 
-clien, empp = st.tabs(["Cliente", "Empresa"])
+clien, empp = st.tabs(["Seguimiento - Cliente", "Empresa"])
 
 with clien:
-    st.header("Seguimiento - Cliente")
+    st.write("")
 with empp:
-    st.header("Empresa")
     passw=st.text_input("Contraseña:",type="password")
-    
+
     if passw==st.secrets["password"]:
         tab1, tab2, tab3, tab4 = st.tabs(["Cat", "Dog", "Owl","a"])
 
@@ -78,7 +77,7 @@ with empp:
         with tab4:
             st.header("An a")
             st.image("https://static.streamlit.io/examples/owl.jpg")
-
+    else: "Contraseña incorrecta"
             
 
 

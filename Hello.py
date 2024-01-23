@@ -49,6 +49,7 @@ result = (
 values = result.get('values',[])
 df=pd.DataFrame(values[1:],columns=values[0])
 df_fix=df[df["ID"] != '']
+print(df_fix)
 df_index=df_fix.index
 maxrow=df_index[-1]+3
 

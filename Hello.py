@@ -60,28 +60,30 @@ if Emp:
 
     passw = st.text_input("Contraseña:",type="password")
 
-    if passw == st.secrets["password"]:
-   
-        tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificacion", "Status", "Unused"])
+    if passw:
 
-        with tab1:
-            st.header("A cat")
-            st.image("https://static.streamlit.io/examples/cat.jpg")
+        if passw == st.secrets["password"]:
+    
+            tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificacion", "Status", "Unused"])
 
-        with tab2:
-            st.header("A dog")
-            st.image("https://static.streamlit.io/examples/dog.jpg")
+            with tab1:
+                st.header("A cat")
+                st.image("https://static.streamlit.io/examples/cat.jpg")
 
-        with tab3:
-            st.header("An owl")
-            st.image("https://static.streamlit.io/examples/owl.jpg")
+            with tab2:
+                st.header("A dog")
+                st.image("https://static.streamlit.io/examples/dog.jpg")
 
-        with tab4:
-            st.header("An a")
-            st.image("https://static.streamlit.io/examples/owl.jpg")
+            with tab3:
+                st.header("An owl")
+                st.image("https://static.streamlit.io/examples/owl.jpg")
 
-    else:
+            with tab4:
+                st.header("An a")
+                st.image("https://static.streamlit.io/examples/owl.jpg")
 
-        st.write("Contraseña incorrecta")
+        else:
+
+            st.write("Contraseña incorrecta")
 
 

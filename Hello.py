@@ -71,7 +71,7 @@ if Emp:
 
 if password:
     
-    tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificacion", "Status", "Unused"])
+    tab1, tab2, tab3, tab4 = st.columns(4)
 
     with tab1:
         st.header("A cat")

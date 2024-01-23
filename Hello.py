@@ -46,6 +46,6 @@ result = (
         .execute()
     )
 # Extraemos values del resultado
-valuee = result.get('values',[])
-st.write(pd.DataFrame(valuee))
+values = result.get('values',[])
+st.write(pd.DataFrame(values[1:], columns=values[0]))
 

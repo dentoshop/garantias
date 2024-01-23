@@ -47,5 +47,5 @@ result = (
     )
 # Extraemos values del resultado
 valuee = result.get('values',[])
-print(valuee)
+st.write(pd.DataFrame(valuee))
 

@@ -47,7 +47,9 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
+print(values)
 df=pd.DataFrame(values,columns=values[0])
+print(df)
 df_fix=df[df["ID"] != '']
 print(df_fix)
 df_index=df_fix.index

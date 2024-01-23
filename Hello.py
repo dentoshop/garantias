@@ -46,6 +46,6 @@ result = (
         .execute()
     )
 # Extraemos values del resultado
-values = result.get('values',[])
-print(values[:])
+valuee = result.get('values',[])
+print(valuee)
 

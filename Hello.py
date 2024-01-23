@@ -47,5 +47,9 @@ result = (
     )
 # Extraemos values del resultado
 values = result.get('values',[])
-st.write(pd.DataFrame(values[1:], columns=values[0]))
+df=pd.DataFrame(values[1:], columns=values[0])
+df_fix=df[df["ID"] != '']
+df_index=df_fix.index
+maxrow=df_index[-1]+3
+st.write(maxrow)
 

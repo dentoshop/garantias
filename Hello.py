@@ -84,6 +84,8 @@ with empp:
                 
                 Accesorios=st.text_input("Accesorios")
 
+                Obs=st.text_input("Observaciones") 
+
 
             with col2:
                 
@@ -98,8 +100,6 @@ with empp:
                 Nom_Equip=st.text_input("Nombre del Equipo")
 
                 Motivo=st.text_input("Motivo de Ingreso")
-
-            Obs=st.text_input("Observaciones") 
 
             with col1:
                 

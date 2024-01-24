@@ -102,8 +102,10 @@ with empp:
 
                 Motivo=st.text_input("Motivo de Ingreso")
 
-                Obs=st.text_input("Observaciones") 
+                st.write("")
+                st.write("")
 
+                Motivoa=st.text_input("Motivo de Ingreso")
 
         with tab2:
             

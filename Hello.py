@@ -64,15 +64,12 @@ with empp:
 
         with tab1:
 
+            st.write(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
+            id=int(df_fix.iloc[maxrow-2,0])+1
+
             col1, col2 = st.columns(2)
 
             with col1:
-                
-                st.write("")
-                st.write("")
-                st.write(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
-                id=int(df_fix.iloc[maxrow-2,0])+1
-                st.write("")
 
                 Nombres=st.text_input("Nombres")
 

@@ -100,7 +100,10 @@ with empp:
 
                 Motivo=st.text_input("Motivo de Ingreso") 
 
-                               
+            with col1:
+
+                Motivoa=st.text_input("Motivo de Ingreso") 
+           
 
 
         with tab2:

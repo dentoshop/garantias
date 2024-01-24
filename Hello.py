@@ -75,6 +75,8 @@ with empp:
                 fecha_ing1=pd.to_datetime(fecha_ing)
 
                 Dni=st.text_input("DNI")
+
+                Nom_emp=st.text_input("Empresa")
                 
 
             with col2:
@@ -83,6 +85,8 @@ with empp:
 
                 Apellidos=st.text_input("Apellidos") 
                 
+                Ruc=st.text_input("ruc")
+
 
         with tab2:
             

@@ -102,8 +102,16 @@ with empp:
 
                 Motivo=st.text_input("Motivo de Ingreso")
 
-                Garantia=st.selectbox("¿Tiene garantía?",["Si","No"]) 
-                
+                Garantia=st.selectbox("¿Tiene garantía?",["Si","No"])
+
+                if Garantia=="Si":
+                    monto_pago=0
+                elif Garantia=="No":
+
+                    with col1:
+                        monto_pago=st.number_input("Costo de la evaluacion",step=0.01)
+
+
 
         with tab2:
             

@@ -52,6 +52,15 @@ df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+2
 
+def llenar(valores):
+    filling = service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID,
+        range=RANGE_NAME_FILL,
+        valueInputOption='USER_ENTERED',
+        body={'values': [valores]}
+    )
+    return filling.execute()
+
 empp, clien = st.tabs(["Empresa","Seguimiento - Cliente"])
 
 with clien:
@@ -117,7 +126,7 @@ with empp:
 
             valores=[fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago]
             
-            boton_fill=st.button("Llenar")
+            boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
 
             if boton_fill==True:
                 filling2 = service.spreadsheets().values().update(

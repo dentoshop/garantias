@@ -70,16 +70,16 @@ with empp:
             col1, col2 = st.columns(2)
 
             with col1:
-
-                Nombres=st.text_input("Nombres")
+                
+                fecha_ing=st.date_input("Fecha",format="DD/MM/YYYY")
+                fecha_ing1=pd.to_datetime(fecha_ing)
 
                 Dni=st.text_input("DNI")
                 
 
             with col2:
                 
-                fecha_ing=st.date_input("Fecha",format="DD/MM/YYYY")
-                fecha_ing1=pd.to_datetime(fecha_ing)
+                Nombres=st.text_input("Nombres")
 
                 Apellidos=st.text_input("Apellidos") 
                 

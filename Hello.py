@@ -128,7 +128,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago]
+            valores=[id,fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion"]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
 

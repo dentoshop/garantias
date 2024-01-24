@@ -67,7 +67,8 @@ with empp:
             col1, col2 = st.columns(2)
 
             with col1:
-            
+                
+                st.write("")
                 st.write(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
                 id=int(df_fix.iloc[maxrow-2,0])+1
 
@@ -99,6 +100,4 @@ with empp:
     else: "Contraseña incorrecta"
             
 st.write(df)
-st.write(maxrow)
-st.write(df_fix.iloc[0:,0])
 

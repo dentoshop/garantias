@@ -78,7 +78,7 @@ with empp:
 
                 Nom_emp=st.text_input("Empresa")
 
-                Num=st.text_input("Número")
+                Num=st.text_input("Número de celular")
 
                 Num_sn=st.text_input("Numero de Serie")
                 
@@ -92,7 +92,9 @@ with empp:
                 
                 Nombres=st.text_input("Nombres")
 
-                Apellidos=st.text_input("Apellidos") 
+                Apellidos=st.text_input("Apellidos")
+
+                Nom_Apell= Nombres+", "+Apellidos
                 
                 Ruc=st.text_input("RUC")
 
@@ -111,6 +113,26 @@ with empp:
                     with col1:
                         monto_pago=st.number_input("Costo de la evaluacion",step=0.01)
 
+            
+
+            valores=[fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago]
+            
+            boton_fill=st.button("Llenar")
+
+            if boton_fill==True:
+                filling2 = service.spreadsheets().values().update(
+                    spreadsheetId=SPREADSHEET_ID,
+                    range="Fill!A1",
+                    valueInputOption='USER_ENTERED',
+                    body={'values': (sheet.values().get(spreadsheetId=SPREADSHEET_ID,range=f'Fill!A1:N{maxrow-1}').execute()).get('values',[])}
+                ).execute()
+
+
+            on = st.toggle('Mostrar ultimos 10 ingresos')
+
+            if on:
+                st.table(df_fix[-10:])
+
 
 
         with tab2:
@@ -127,5 +149,5 @@ with empp:
 
     else: "Contraseña incorrecta"
             
-st.write(df)
+
 

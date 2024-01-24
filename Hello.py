@@ -76,8 +76,9 @@ with empp:
 
         with tab1:
 
-            st.subheader(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}",)
             id=int(df_fix.iloc[maxrow-2,0])+1
+            st.subheader(f"ID: {id}",)
+
 
             col1, col2 = st.columns(2)
 
@@ -127,7 +128,7 @@ with empp:
 
             
 
-            valores=[maxrow,fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago]
+            valores=[id,fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
 

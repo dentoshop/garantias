@@ -86,6 +86,7 @@ with empp:
 
                 Obs=st.text_input("Observaciones") 
 
+                Garantia=st.selectbox("¿Tiene garantía?",["Si","No"]) 
 
             with col2:
                 
@@ -101,10 +102,7 @@ with empp:
 
                 Motivo=st.text_input("Motivo de Ingreso")
 
-            with col1:
-                
-                Garantia=st.selectbox("¿Tiene garantía?",["Si","No"]) 
-           
+                Obs=st.text_input("Observaciones") 
 
 
         with tab2:

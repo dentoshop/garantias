@@ -33,6 +33,7 @@ KEY ={
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
 RANGE_NAME_GET="Fill!A:U"
 
+
 creds = None
 creds = service_account.Credentials.from_service_account_info(KEY, scopes=SCOPES)
 
@@ -51,6 +52,8 @@ df=pd.DataFrame(values[1:], columns=values[0])
 df_fix=df[df["ID"] != '']
 df_index=df_fix.index
 maxrow=df_index[-1]+2
+
+RANGE_NAME_FILL=f"Fill!A{maxrow}"
 
 def llenar(valores):
     filling = service.spreadsheets().values().update(
@@ -127,14 +130,6 @@ with empp:
             valores=[fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
-
-            if boton_fill==True:
-                filling2 = service.spreadsheets().values().update(
-                    spreadsheetId=SPREADSHEET_ID,
-                    range="Fill!A1",
-                    valueInputOption='USER_ENTERED',
-                    body={'values': (sheet.values().get(spreadsheetId=SPREADSHEET_ID,range=f'Fill!A1:N{maxrow-1}').execute()).get('values',[])}
-                ).execute()
 
 
             on = st.toggle('Mostrar ultimos 10 ingresos')

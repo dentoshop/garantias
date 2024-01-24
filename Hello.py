@@ -105,7 +105,7 @@ with empp:
                 st.write("")
                 st.write("")
 
-                Motivoa=st.text_input("Motivo de Ingreso")
+                Motivoa=st.text_input("Motivo de Ingraeso")
 
         with tab2:
             

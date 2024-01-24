@@ -107,7 +107,6 @@ with empp:
                 st.write("")
                 st.write("")
                 st.write("")
-                st.write("")
 
                 Motivoa=st.text_input("Motivo de Ingraeso")
 

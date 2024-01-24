@@ -64,7 +64,7 @@ with empp:
 
         with tab1:
     
-            st.write(f"ID: {df.iloc[0,maxrow]}") 
+            st.write(f"ID: {df.iloc[[maxrow,1]]}") 
 
         with tab2:
             
@@ -82,5 +82,5 @@ with empp:
             
 st.write(df)
 st.write(maxrow)
-st.write(df.iloc[[0]])
+st.write(df.iloc[[maxrow,1]])
 

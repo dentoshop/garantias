@@ -79,7 +79,10 @@ with empp:
                 Nom_emp=st.text_input("Empresa")
 
                 Num=st.text_input("Número")
+
+                Num_sn=st.text_input("Numero de Serie")
                 
+                Accesorios=st.text_input("Accesorios")
 
             with col2:
                 
@@ -90,6 +93,10 @@ with empp:
                 Ruc=st.text_input("RUC")
 
                 Email=st.text_input("Email")
+
+                Nom_Equip=st.text_input("Nombre del Equipo")
+
+                Obs=st.text_input("Observaciones")                
 
 
         with tab2:

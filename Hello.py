@@ -50,7 +50,7 @@ values = result.get('values',[])
 df=pd.DataFrame(values[1:], columns=values[0])
 df_fix=df[df["ID"] != '']
 df_index=df_fix.index
-maxrow=df_index[-1]
+maxrow=df_index[-1]-1
 
 empp, clien = st.tabs(["Empresa","Seguimiento - Cliente"])
 
@@ -82,4 +82,5 @@ with empp:
             
 st.write(df)
 st.write(maxrow)
+st.write(df.iloc[0,maxrow])
 

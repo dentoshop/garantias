@@ -82,5 +82,5 @@ with empp:
             
 st.write(df)
 st.write(maxrow)
-st.write(df.iloc[0,maxrow])
+st.write(df.iloc[0])
 

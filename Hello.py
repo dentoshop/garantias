@@ -75,7 +75,7 @@ with empp:
 
             with col2:
                 
-                fecha_ing=st.date_input("Fecha")
+                fecha_ing=st.date_input("Fecha",format="DD/MM/YYYY")
                 st.write(fecha_ing)
 
         with tab2:

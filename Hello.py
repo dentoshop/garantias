@@ -68,11 +68,12 @@ with empp:
 
             with col1:
             
-                st.write(f"ID: {df_fix.iloc[maxrow-2,0]}") 
+                st.write(f"ID: {df_fix.iloc[maxrow-2,0]}")
+                st.text_input("Apellidos") 
 
             with col2:
                 
-                st.write("a")
+                st.text_input("Nombres")
 
         with tab2:
             

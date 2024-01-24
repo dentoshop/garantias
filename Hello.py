@@ -102,7 +102,7 @@ with empp:
 
             with col1:
 
-                Motivoa=st.text_input("Motivo de Ingreso") 
+                Motivoa=st.text_input("Motivo de Isdsngreso") 
            
 
 

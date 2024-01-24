@@ -68,8 +68,8 @@ with empp:
 
             with col1:
             
-                st.write(f"ID: {df_fix.iloc[maxrow-1,0]}")
-                id=df_fix.iloc[maxrow-1,0]
+                st.write(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
+                id=int(df_fix.iloc[maxrow-2,0])+1
                 Nombres=st.text_input("Nombres")
                 Apellidos=st.text_input("Apellidos") 
 

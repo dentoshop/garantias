@@ -64,7 +64,7 @@ with empp:
 
         with tab1:
 
-            st.write(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
+            st.header(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
             id=int(df_fix.iloc[maxrow-2,0])+1
 
             col1, col2 = st.columns(2)

@@ -70,14 +70,19 @@ with empp:
             
                 st.write(f"ID: {int(df_fix.iloc[maxrow-2,0])+1}")
                 id=int(df_fix.iloc[maxrow-2,0])+1
+
                 Nombres=st.text_input("Nombres")
-                Apellidos=st.text_input("Apellidos") 
+
+                Dni=st.text_input("DNI")
+                
 
             with col2:
                 
                 fecha_ing=st.date_input("Fecha",format="DD/MM/YYYY")
-                fecha_ing1=pd.to_datetime(fecha_ing).strftime("%d/%m/%Y")
-                st.write(fecha_ing1)
+                fecha_ing1=pd.to_datetime(fecha_ing)
+
+                Apellidos=st.text_input("Apellidos") 
+                
 
         with tab2:
             

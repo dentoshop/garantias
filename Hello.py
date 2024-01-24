@@ -63,8 +63,16 @@ with empp:
         tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificar", "Status",""])
 
         with tab1:
-    
-            st.write(f"ID: {df_fix.iloc[maxrow-2,0]}") 
+
+            col1, col2 = st.columns(2)
+
+            with col1:
+            
+                st.write(f"ID: {df_fix.iloc[maxrow-2,0]}") 
+
+            with col2:
+                
+                st.write("a")
 
         with tab2:
             

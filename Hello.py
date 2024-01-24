@@ -77,6 +77,8 @@ with empp:
                 Dni=st.text_input("DNI")
 
                 Nom_emp=st.text_input("Empresa")
+
+                Num=st.text_input("Número")
                 
 
             with col2:
@@ -85,7 +87,9 @@ with empp:
 
                 Apellidos=st.text_input("Apellidos") 
                 
-                Ruc=st.text_input("ruc")
+                Ruc=st.text_input("RUC")
+
+                Email=st.text_input("Email")
 
 
         with tab2:

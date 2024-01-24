@@ -76,7 +76,7 @@ with empp:
             with col2:
                 
                 fecha_ing=st.date_input("Fecha",format="DD/MM/YYYY")
-                fecha_ing1=pd.to_datetime(fecha_ing)
+                fecha_ing1=pd.to_datetime(fecha_ing).strftime("%d/%m/%Y")
                 st.write(fecha_ing1)
 
         with tab2:

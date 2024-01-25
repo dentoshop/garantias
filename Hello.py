@@ -129,7 +129,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1,Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion"]
+            valores=[id,fecha_ing,Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion"]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
 

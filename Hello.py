@@ -142,7 +142,7 @@ with empp:
 
         with tab2:
             
-           st.write("a")   
+           st.write(df_fix.iloc[maxrow-3])   
 
         with tab3:
             

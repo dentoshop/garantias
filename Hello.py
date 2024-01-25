@@ -143,7 +143,8 @@ with empp:
 
         with tab2:
             
-           st.write(df_fix.loc[maxrow-3]["ID"])   
+           st.write(df_fix.loc[maxrow-3]["ID"])
+           num_sn_buscar=st.selectbox("Ingresar número de serie deseado",df_fix["NUM_SN"])   
 
         with tab3:
             

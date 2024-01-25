@@ -129,7 +129,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1.strftime('%d-%b-%Y'),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion"]
+            valores=[id,fecha_ing1,Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion"]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
 
@@ -137,16 +137,22 @@ with empp:
             on = st.toggle('Mostrar ultimos 10 ingresos')
 
             if on:
+            
                 st.table(df_fix[-10:])
 
 
 
         with tab2:
-            
-           st.write(df_fix.loc[maxrow-3]["ID"])
-           num_sn_buscar=st.selectbox("Ingresar número de serie",df_fix["NUM_SN"])
-           id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
-           st.write(df_fix[df_fix['ID'] == id_buscar]['ID'].index)
+            num_sn_buscar=st.selectbox("Ingresar número de serie",df_fix["NUM_SN"])
+
+            id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
+            row_mod=df_fix[df_fix['ID'] == id_buscar].index
+
+            st.selectbox("")
+
+            fecha_mod=st.date_input("Fecha",format="DD/MM/YYYY")
+            fecha_mod=pd.to_datetime(fecha_ing)  
+
 
         with tab3:
             

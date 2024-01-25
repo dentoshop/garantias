@@ -148,7 +148,7 @@ with empp:
             id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
             row_mod=df_fix[df_fix['ID'] == id_buscar].index
 
-            st.selectbox("")
+            st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Entrega'])
 
             fecha_mod=st.date_input("Fecha",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_ing)  

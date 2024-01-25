@@ -58,11 +58,12 @@ RANGE_NAME_FILL=f"Fill!A{maxrow}"
 def llenar(valores):
     filling = service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
-        range=RANGE_NAME_FILL,
+        range="Fill!A3",
         valueInputOption='USER_ENTERED',
         body={'values': [valores]}
     )
     return filling.execute()
+
 
 empp, clien = st.tabs(["Empresa","Seguimiento - Cliente"])
 

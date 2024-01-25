@@ -146,7 +146,7 @@ with empp:
            st.write(df_fix.loc[maxrow-3]["ID"])
            num_sn_buscar=st.selectbox("Ingresar número de serie",df_fix["NUM_SN"])
            id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
-           st.write(df_fix[df_fix['ID'] == id_buscar])
+           st.write(df_fix[df_fix['ID'] == id_buscar]['ID'].index)
 
         with tab3:
             

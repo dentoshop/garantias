@@ -146,7 +146,7 @@ with empp:
             num_sn_buscar=st.selectbox("Ingresar número de serie",df_fix["NUM_SN"])
 
             id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
-            row_mod=df_fix[df_fix['ID'] == id_buscar].index
+            row_mod=df_fix[df_fix['ID'] == id_buscar].index[0]
 
             st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
 

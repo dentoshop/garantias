@@ -158,7 +158,7 @@ with empp:
             
             st.write(row_mod)
             st.write(num_sn_buscar)
-            st.table(type(valores_mod))
+            st.write(type(valores_mod))
             st.table(df_fix.iloc[row_mod])
 
         with tab3:

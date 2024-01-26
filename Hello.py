@@ -159,7 +159,7 @@ with empp:
             st.write(row_mod)
             st.write(num_sn_buscar)
             st.write(type(row_mod))
-            st.write(type(df_fix.iloc[4,0])+""+df_fix.iloc[4,0])
+            st.write(type(df_fix.iloc[4,0]),"" , df_fix.iloc[4,0])
             st.table(valores_mod)
             st.table(df_fix.iloc[row_mod])
 

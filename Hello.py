@@ -156,7 +156,7 @@ with empp:
 
 
 
-            print(row_mod.type())
+            st.write(type(row_mod))
             st.table(df_fix[row_mod])
 
         with tab3:

@@ -174,7 +174,7 @@ with empp:
             st.write(row_mod)
             
             st.table(df_fix.iloc[row_mod])
-            st.table(valores_mod[17])
+            st.write(valores_mod[17])
 
         with tab3:
             

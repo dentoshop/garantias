@@ -154,7 +154,7 @@ with empp:
             fecha_mod=pd.to_datetime(fecha_mod) 
 
 
-            valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].values.tolist()
+            valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
             
             st.write(row_mod)
             st.write(num_sn_buscar)

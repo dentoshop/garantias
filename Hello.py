@@ -151,8 +151,13 @@ with empp:
             st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
 
             fecha_mod=st.date_input("Fecha ",format="DD/MM/YYYY")
-            fecha_mod=pd.to_datetime(fecha_mod)  
+            fecha_mod=pd.to_datetime(fecha_mod) 
 
+
+
+
+
+            st.table(df_fix[row_mod:])
 
         with tab3:
             

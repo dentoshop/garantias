@@ -109,8 +109,11 @@ with empp:
                 Apellidos=st.text_input("Apellidos")
 
                 Nom_Apell= Nombres+", "+Apellidos
-                
-                Ruc=st.text_input("RUC")
+
+                try:
+                    Ruc=st.text_input("RUC")
+                except Exception:
+                    Ruc=st.number_input("RUC")
 
                 Email=st.text_input("Email")
 

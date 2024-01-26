@@ -152,7 +152,7 @@ with empp:
             #Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","No Entregado","","","",""]
             valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
             
-
+            st.write(f"Nombre: {valores_mod[2]}")
 
             estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
 
@@ -161,15 +161,15 @@ with empp:
 
             def fechas():
                 if estado_mod == 'Recepcion':
-                    valores_mod[19]=fecha_mod
+                    valores_mod[18]=fecha_mod
                 elif estado_mod == 'Evaluacion':
-                    valores_mod[20]=fecha_mod
+                    valores_mod[19]=fecha_mod
                 elif estado_mod == 'Reparacion':
-                    valores_mod[21]=fecha_mod
+                    valores_mod[20]=fecha_mod
                 elif estado_mod == 'Listo para Entrega':
-                    valores_mod[22]=fecha_mod
+                    valores_mod[21]=fecha_mod
                 elif estado_mod == 'Entregado':
-                    valores_mod[23]=fecha_mod
+                    valores_mod[22]=fecha_mod
 
             st.write(row_mod)
             

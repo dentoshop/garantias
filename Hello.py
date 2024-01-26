@@ -157,7 +157,7 @@ with empp:
 
 
 
-            st.table(df_fix[row_mod:])
+            st.table(df_fix[row_mod])
 
         with tab3:
             

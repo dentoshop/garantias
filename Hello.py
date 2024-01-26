@@ -170,11 +170,11 @@ with empp:
                     valores_mod[22]=fecha_mod
                 elif estado_mod == 'Entregado':
                     valores_mod[23]=fecha_mod
-            
+
             st.write(row_mod)
             
             st.table(df_fix.iloc[row_mod])
-            st.table(valores_mod[18])
+            st.table(valores_mod[17])
 
         with tab3:
             

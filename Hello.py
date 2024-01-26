@@ -157,7 +157,7 @@ with empp:
 
 
             st.write(row_mod)
-            st.table(df_fix.iloc[row_mod:])
+            st.table(df_fix.iloc[row_mod:][0])
 
         with tab3:
             

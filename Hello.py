@@ -55,10 +55,10 @@ maxrow=df_index[-1]+3
 
 RANGE_NAME_FILL=f"Fill!A{maxrow}"
 
-def llenar(valores):
+def llenar(valores,rangea):
     filling = service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
-        range=RANGE_NAME_FILL,
+        range=rangea,
         valueInputOption='USER_ENTERED',
         body={'values': [valores]}
     )
@@ -131,7 +131,7 @@ with empp:
 
             valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","No Entregado","","","",""]
             
-            boton_fill=st.button("Llenar", on_click=llenar, args=(valores,))
+            boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
 
 
             on = st.toggle('Mostrar ultimos 10 ingresos')
@@ -148,7 +148,7 @@ with empp:
             id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
             row_mod=df_fix[df_fix['ID'] == id_buscar].index
 
-            st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Entrega'])
+            st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
 
             fecha_mod=st.date_input("Fecha ",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod)  

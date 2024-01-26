@@ -153,6 +153,14 @@ with empp:
             valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
             
             st.write(f"Nombre: {valores_mod[2]}")
+            st.write(f"DNI: {valores_mod[3]}")
+            st.write(f"RUC: {valores_mod[4]}")
+            st.write(f"Número: {valores_mod[5]}")
+            st.write(f"Email: {valores_mod[6]}")
+            st.write(f"Nombre del Equipo: {valores_mod[8]}")
+            st.write(f"Observaciones: {valores_mod[10]}")
+            st.write(f"Motivo: {valores_mod[11]}")
+            st.write(f"Garantia: {valores_mod[12]}")
 
             estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
 

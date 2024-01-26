@@ -148,16 +148,33 @@ with empp:
             id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
             row_mod=df_fix[df_fix['ID'] == id_buscar].index[0]
 
-            st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
+            #valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,
+            #Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","No Entregado","","","",""]
+            valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
+            
+
+
+            estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
 
             fecha_mod=st.date_input("Fecha ",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod) 
 
-
-            valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
+            def fechas():
+                if estado_mod == 'Recepcion':
+                    valores_mod[19]=fecha_mod
+                elif estado_mod == 'Evaluacion':
+                    valores_mod[20]=fecha_mod
+                elif estado_mod == 'Reparacion':
+                    valores_mod[21]=fecha_mod
+                elif estado_mod == 'Listo para Entrega':
+                    valores_mod[22]=fecha_mod
+                elif estado_mod == 'Entregado':
+                    valores_mod[23]=fecha_mod
             
             st.write(row_mod)
+            
             st.table(df_fix.iloc[row_mod])
+            st.table(valores_mod[18])
 
         with tab3:
             

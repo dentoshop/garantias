@@ -157,8 +157,6 @@ with empp:
             valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
             
             st.write(row_mod)
-            st.write(num_sn_buscar)
-            st.write(valores_mod)
             st.table(df_fix.iloc[row_mod])
 
         with tab3:

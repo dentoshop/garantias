@@ -154,10 +154,12 @@ with empp:
             fecha_mod=pd.to_datetime(fecha_mod) 
 
 
-            valores_mod=df_fix[(df_fix['ID'] == row_mod) & (df_fix['NUM_SN'] == "wfdfddsfd")]
+            valores_mod=df_fix[(df_fix['ID'] == row_mod) & (df_fix['NUM_SN'] == num_sn_buscar)]
             
             st.write(row_mod)
             st.write(num_sn_buscar)
+            st.write(type(row_mod))
+            st.write(type(df_fix.iloc[4,0])+""+df_fix.iloc[4,0])
             st.table(valores_mod)
             st.table(df_fix.iloc[row_mod])
 

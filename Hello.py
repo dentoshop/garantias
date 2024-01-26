@@ -31,7 +31,7 @@ KEY ={
 }
 
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
-RANGE_NAME_GET="Fill!A:U"
+RANGE_NAME_GET="Fill!A:V"
 
 
 creds = None
@@ -58,7 +58,7 @@ RANGE_NAME_FILL=f"Fill!A{maxrow}"
 def llenar(valores):
     filling = service.spreadsheets().values().update(
         spreadsheetId=SPREADSHEET_ID,
-        range="Fill!A3",
+        range=RANGE_NAME_FILL,
         valueInputOption='USER_ENTERED',
         body={'values': [valores]}
     )
@@ -150,7 +150,7 @@ with empp:
 
             st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Entrega'])
 
-            fecha_mod=st.date_input("Fecha",format="DD/MM/YYYY")
+            fecha_mod=st.date_input("Fecha")
             fecha_mod=pd.to_datetime(fecha_ing)  
 
 

@@ -157,7 +157,7 @@ with empp:
             valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)]
             
             st.write(row_mod)
-            st.write(num_sn_buscar.tolist())
+            st.write(type(num_sn_buscar))
             st.table(valores_mod)
             st.table(df_fix.iloc[row_mod])
 

@@ -164,8 +164,11 @@ with empp:
 
             st.write(valores_mod[14])
 
-            estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder=valores_mod[14])
-
+            try:
+                estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder=valores_mod[14])
+            except Exception:
+                estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder="")
+            
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod) 
 

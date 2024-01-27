@@ -152,7 +152,8 @@ with empp:
             #Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","No Entregado","","","",""]
 
             valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
-            
+            valores_mod2=copy(valores_mod)
+  
             st.write(f"Nombre:  {valores_mod[2]}")
             st.write(f"DNI:  {valores_mod[3]}")
             st.write(f"RUC:  {valores_mod[4]}")
@@ -177,17 +178,48 @@ with empp:
                 
                 costo_reparacion=st.number_input('Costo de la reparacion')
 
+            else:
+
+                costo_reparacion=0
+
+            devo=st.selectbox("¿Habra devolucion?",['Si','No'])
+            result=st.selectbox("Entrega",['Entregado','No Entregado'])
+            
+
             def fechas():
-                if estado_mod == 'Recepcion':
-                    valores_mod[18]=fecha_mod
-                elif estado_mod == 'Evaluacion':
-                    valores_mod[19]=fecha_mod
+                if estado_mod == 'Evaluacion':
+                    valores_mod2[18]=fecha_mod
+                    valores_mod2[19]=valores_mod[19]
+                    valores_mod2[20]=valores_mod[20]
+                    valores_mod2[21]=valores_mod[21]
                 elif estado_mod == 'Reparacion':
-                    valores_mod[20]=fecha_mod
+                    valores_mod2[18]=valores_mod[18]
+                    valores_mod2[19]=fecha_mod
+                    valores_mod2[20]=valores_mod[20]
+                    valores_mod2[21]=valores_mod[21]
                 elif estado_mod == 'Listo para Entrega':
-                    valores_mod[21]=fecha_mod
+                    valores_mod2[18]=valores_mod[18]
+                    valores_mod2[19]=valores_mod[19]
+                    valores_mod2[20]=fecha_mod
+                    valores_mod2[21]=valores_mod[21]
                 elif estado_mod == 'Entregado':
-                    valores_mod[22]=fecha_mod
+                    valores_mod2[18]=valores_mod[18]
+                    valores_mod2[19]=valores_mod[19]
+                    valores_mod2[20]=valores_mod[20]
+                    valores_mod2[21]=fecha_mod
+
+            valores_mod2[14]=estado_mod
+            valores_mod2[15]=costo_reparacion
+            valores_mod2[16]=devo
+            valores_mod2[17]=result
+
+            def finale(valores,rango):
+                fechas()
+                llenar(valores,rango)
+
+            RANGE_NAME_MOD=f"Fill!A{row_mod}"
+
+            boton_mod=st.button("Modificar", on_click=finale, args=(valores_mod2,RANGE_NAME_MOD,))
 
             st.write(row_mod)
             

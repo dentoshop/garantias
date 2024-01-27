@@ -171,7 +171,7 @@ with empp:
                 estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder="")
             
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
-            fecha_mod=pd.to_datetime(fecha_mod) 
+            fecha_mod=pd.to_datetime(fecha_mod).strftime("%d/%m/%Y")
 
             if valores_mod[12] == "No":
                 

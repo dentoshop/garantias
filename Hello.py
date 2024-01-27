@@ -73,7 +73,7 @@ with empp:
     passw=st.text_input("Contraseña:",type="password")
 
     if passw==st.secrets["password"]:
-        tab1, tab2, tab3, tab4 = st.tabs(["Llenado", "Modificar", "Status",""])
+        tab1, tab2 = st.tabs(["Llenado", "Modificar"])
 
         with tab1:
 
@@ -148,9 +148,7 @@ with empp:
             id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
             row_mod=df_fix[df_fix['ID'] == id_buscar].index[0]
 
-            #valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,
-            #Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","No Entregado","","","",""]
-
+            
             valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
             valores_mod2=copy(valores_mod)
   
@@ -222,19 +220,8 @@ with empp:
 
             boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
 
-            st.write(row_mod)
-            #st.write(valores_mod2)
-            
+
             st.table(df_fix.iloc[row_mod])
-            st.write(valores_mod[17])
-
-        with tab3:
-            
-            st.write("a")  
-
-        with tab4:
-            
-            st.write("a")  
 
     else: "Contraseña incorrecta"
             

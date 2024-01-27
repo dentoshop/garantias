@@ -163,7 +163,7 @@ with empp:
             st.write(f"Observaciones:  {valores_mod[10]}")
             st.write(f"Motivo:  {valores_mod[11]}")
             st.write(f"Garantia:  {valores_mod[12]}")
-            
+
 
             try:
                 estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder=valores_mod[14])
@@ -218,7 +218,7 @@ with empp:
             valores_mod2[17]=result
 
 
-            RANGE_NAME_MOD=f"Fill!A{row_mod}"
+            RANGE_NAME_MOD=f"Fill!A{row_mod+2}"
 
             boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
 

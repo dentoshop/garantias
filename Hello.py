@@ -173,7 +173,7 @@ with empp:
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod) 
 
-            if valores_mod[12] == "Si":
+            if valores_mod[12] == "No":
                 
                 costo_reparacion=st.number_input('Costo de la reparacion')
 

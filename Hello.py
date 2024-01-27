@@ -162,10 +162,14 @@ with empp:
             st.write(f"Motivo:  {valores_mod[11]}")
             st.write(f"Garantia:  {valores_mod[12]}")
 
-            estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'])
+            estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder=valores_mod[14])
 
-            fecha_mod=st.date_input("Fecha ",format="DD/MM/YYYY")
+            fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod) 
+
+            if estado_mod[12] = "Si":
+                
+                costo_reparacion=st.number_input('Costo de la reparacion')
 
             def fechas():
                 if estado_mod == 'Recepcion':

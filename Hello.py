@@ -163,8 +163,7 @@ with empp:
             st.write(f"Observaciones:  {valores_mod[10]}")
             st.write(f"Motivo:  {valores_mod[11]}")
             st.write(f"Garantia:  {valores_mod[12]}")
-
-            st.write(valores_mod[14])
+            
 
             try:
                 estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder=valores_mod[14])

@@ -224,7 +224,7 @@ with empp:
             boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
 
             st.write(row_mod)
-            st.write(valores_mod2)
+            #st.write(valores_mod2)
             
             st.table(df_fix.iloc[row_mod])
             st.write(valores_mod[17])

@@ -186,42 +186,45 @@ with empp:
             result=st.selectbox("Entrega",['Entregado','No Entregado'])
             
 
-            def fechas():
-                if estado_mod == 'Evaluacion':
-                    valores_mod2[18]=fecha_mod
-                    valores_mod2[19]=valores_mod[19]
-                    valores_mod2[20]=valores_mod[20]
-                    valores_mod2[21]=valores_mod[21]
-                elif estado_mod == 'Reparacion':
-                    valores_mod2[18]=valores_mod[18]
-                    valores_mod2[19]=fecha_mod
-                    valores_mod2[20]=valores_mod[20]
-                    valores_mod2[21]=valores_mod[21]
-                elif estado_mod == 'Listo para Entrega':
-                    valores_mod2[18]=valores_mod[18]
-                    valores_mod2[19]=valores_mod[19]
-                    valores_mod2[20]=fecha_mod
-                    valores_mod2[21]=valores_mod[21]
-                elif estado_mod == 'Entregado':
-                    valores_mod2[18]=valores_mod[18]
-                    valores_mod2[19]=valores_mod[19]
-                    valores_mod2[20]=valores_mod[20]
-                    valores_mod2[21]=fecha_mod
+            
+            if estado_mod == 'Recepcion':
+                valores_mod2[18]=valores_mod[18]
+                valores_mod2[19]=valores_mod[19]
+                valores_mod2[20]=valores_mod[20]
+                valores_mod2[21]=valores_mod[21]
+            if estado_mod == 'Evaluacion':
+                valores_mod2[18]=fecha_mod
+                valores_mod2[19]=valores_mod[19]
+                valores_mod2[20]=valores_mod[20]
+                valores_mod2[21]=valores_mod[21]
+            elif estado_mod == 'Reparacion':
+                valores_mod2[18]=valores_mod[18]
+                valores_mod2[19]=fecha_mod
+                valores_mod2[20]=valores_mod[20]
+                valores_mod2[21]=valores_mod[21]
+            elif estado_mod == 'Listo para Entrega':
+                valores_mod2[18]=valores_mod[18]
+                valores_mod2[19]=valores_mod[19]
+                valores_mod2[20]=fecha_mod
+                valores_mod2[21]=valores_mod[21]
+            elif estado_mod == 'Entregado':
+                valores_mod2[18]=valores_mod[18]
+                valores_mod2[19]=valores_mod[19]
+                valores_mod2[20]=valores_mod[20]
+                valores_mod2[21]=fecha_mod
 
             valores_mod2[14]=estado_mod
             valores_mod2[15]=costo_reparacion
             valores_mod2[16]=devo
             valores_mod2[17]=result
 
-            def finale(valores,rango):
-                fechas()
-                llenar(valores,rango)
 
             RANGE_NAME_MOD=f"Fill!A{row_mod}"
 
-            boton_mod=st.button("Modificar", on_click=finale, args=(valores_mod2,RANGE_NAME_MOD,))
+            boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
 
             st.write(row_mod)
+            st.write(valores_mod2)
             
             st.table(df_fix.iloc[row_mod])
             st.write(valores_mod[17])

@@ -221,7 +221,7 @@ with empp:
             boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
 
             a=df_fix.iloc[row_mod]
-            a.fillna('',inplace=True)
+            a.replace(to_replace="null", value='', inplace=True)
             st.table(a)
 
     else: "Contraseña incorrecta"

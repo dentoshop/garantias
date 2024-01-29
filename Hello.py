@@ -267,6 +267,7 @@ with clien:
     df_client_new.rename(columns=columns_client, inplace=True)
     df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
+    st.dataframe(df_client_new)
     new_rows=["","",""]
     for i in range(1,6):
         if df_client_new[list(columns_client.values())[i+2]]!="":

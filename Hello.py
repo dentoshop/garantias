@@ -254,14 +254,14 @@ with empp:
 
 with clien:
 
-    try:
-        id_client=st.text_input("Ingresa tu ID")
-        df_client=df[df["ID"] == str(id_client)]
-        df_client_new=df_client["NOMBRE_CLIENTE","NUM_SN","ESTADO","FECHA_INGRESO","FECHA_EVALUACIÓN","FECHA_REPAR","FECHA_LISTO","FECHA_ENTREGA"]
+    
+    id_client=st.text_input("Ingresa tu ID")
+    df_client=df[df["ID"] == str(id_client)]
+    df_client_new=df_client["NOMBRE_CLIENTE","NUM_SN","ESTADO","FECHA_INGRESO","FECHA_EVALUACIÓN","FECHA_REPAR","FECHA_LISTO","FECHA_ENTREGA"]
 
-        st.table(df_client_new)
-    except:
-        st.write("Ingresa un numero")
+    st.table(df_client_new)
+
+    st.write("Ingresa un numero")
 
 
 

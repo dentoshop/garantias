@@ -145,8 +145,10 @@ with empp:
             on = st.toggle('Mostrar ultimos 10 ingresos')
 
             if on:
-            
-                st.dataframe(df_fix[-10:],hide_index=True)
+                
+                showli=copy(df_fix)
+                showli.replace(to_replace=['null',None], value='', inplace=True)
+                st.dataframe(showli[-10:],hide_index=True)
 
 
 
@@ -262,7 +264,7 @@ with clien:
     df_client=df_fix[df_fix["ID"] == str(id_client)]
     columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","ESTADO":"Estado","FECHA_INGRESO":"Reparacion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
     df_client_new=df_client[list(columns_client.keys())]
-
+    df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
     st.dataframe(df_client_new)
 

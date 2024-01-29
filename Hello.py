@@ -271,7 +271,7 @@ with clien:
     new_rows=["","",""]
     st.write(type(df_client_new[list(columns_client.values())[1+2]]))
     for i in range(1,6):
-        if df_client_new[list(columns_client.values())[i+2]]!="":
+        if str(df_client_new[list(columns_client.values())[i+2]])!="":
             new_rows=new_rows+["✅"]
         else:
             new_rows=new_rows+[""]

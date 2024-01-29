@@ -252,7 +252,7 @@ with empp:
             st.write(type(a))
             a.style.set_table_styles([{'selector': 'thead', 'props': [('display', 'none')]}])
 
-            st.dataframe( a,use_container_width=st.session_state.use_container_width)
+            st.dataframe( a,use_container_width=True)
 
     else: "Contraseña incorrecta"
 

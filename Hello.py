@@ -248,8 +248,9 @@ with empp:
 
             a=df_fix.iloc[row_mod]
             a.replace(to_replace=['null',None], value='', inplace=True)
+            a.style.hide(axis="columns")
 
-            st.dataframe(a.style.hide(axis="columns") ,use_container_width=st.session_state.use_container_width)
+            st.dataframe( a,use_container_width=st.session_state.use_container_width)
 
     else: "Contraseña incorrecta"
 

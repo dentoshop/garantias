@@ -146,7 +146,7 @@ with empp:
 
             if on:
             
-                st.dataframe(df_fix[-10:])
+                st.dataframe(df_fix[-10:],hide_index=True)
 
 
 
@@ -248,7 +248,7 @@ with empp:
 
             a=df_fix.iloc[row_mod]
             a.replace(to_replace=['null',None], value='', inplace=True)
-            st.dataframe(a)
+            st.dataframe(a,hide_index=True)
 
     else: "Contraseña incorrecta"
 

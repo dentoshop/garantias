@@ -31,7 +31,7 @@ KEY ={
 }
 
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
-RANGE_NAME_GET="Fill!A:V"
+RANGE_NAME_GET="Fill!A:U"
 
 
 creds = None
@@ -129,7 +129,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","No Entregado","","","",""]
+            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","",""]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
 
@@ -198,43 +198,40 @@ with empp:
             except:
                 pass
 
-            devo=st.selectbox("¿Pidio devolucion?",lista_devo)
-
-            
-            result=st.selectbox("Entrega",['Entregado','No Entregado'])
-            
+            devo=st.selectbox("¿Pidio devolucion?",lista_devo)          
 
             
             if estado_mod == 'Recepcion':
-                valores_mod2[18]=valores_mod[18]
-                valores_mod2[19]=valores_mod[19]
-                valores_mod2[20]=valores_mod[20]
-                valores_mod2[21]=valores_mod[21]
-            if estado_mod == 'Evaluacion':
-                valores_mod2[18]=fecha_mod
-                valores_mod2[19]=valores_mod[19]
-                valores_mod2[20]=valores_mod[20]
-                valores_mod2[21]=valores_mod[21]
+                valores_mod2[17] = valores_mod[17]
+                valores_mod2[18] = valores_mod[18]
+                valores_mod2[19] = valores_mod[19]
+                valores_mod2[20] = valores_mod[20]
+            elif estado_mod == 'Evaluacion':
+                valores_mod2[17] = fecha_mod
+                valores_mod2[18] = valores_mod[18]
+                valores_mod2[19] = valores_mod[19]
+                valores_mod2[20] = valores_mod[20]
             elif estado_mod == 'Reparacion':
-                valores_mod2[18]=valores_mod[18]
-                valores_mod2[19]=fecha_mod
-                valores_mod2[20]=valores_mod[20]
-                valores_mod2[21]=valores_mod[21]
+                valores_mod2[17] = valores_mod[17]
+                valores_mod2[18] = fecha_mod
+                valores_mod2[19] = valores_mod[19]
+                valores_mod2[20] = valores_mod[20]
             elif estado_mod == 'Listo para Entrega':
-                valores_mod2[18]=valores_mod[18]
-                valores_mod2[19]=valores_mod[19]
-                valores_mod2[20]=fecha_mod
-                valores_mod2[21]=valores_mod[21]
+                valores_mod2[17] = valores_mod[17]
+                valores_mod2[18] = valores_mod[18]
+                valores_mod2[19] = fecha_mod
+                valores_mod2[20] = valores_mod[20]
             elif estado_mod == 'Entregado':
-                valores_mod2[18]=valores_mod[18]
-                valores_mod2[19]=valores_mod[19]
-                valores_mod2[20]=valores_mod[20]
-                valores_mod2[21]=fecha_mod
+                valores_mod2[17] = valores_mod[17]
+                valores_mod2[18] = valores_mod[18]
+                valores_mod2[19] = valores_mod[19]
+                valores_mod2[20] = fecha_mod
+
+
 
             valores_mod2[14]=estado_mod
             valores_mod2[15]=costo_reparacion
             valores_mod2[16]=devo
-            valores_mod2[17]=result
 
 
             RANGE_NAME_MOD=f"Fill!A{row_mod+2}"

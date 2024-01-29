@@ -281,6 +281,8 @@ with clien:
     # Convert the list to a DataFrame
     new_row_df = pd.DataFrame([new_rows], columns=df_client_new.columns)
 
+    st.write(new_row_df)
+
     # Append the new DataFrame to the original DataFrame
     df_client_new = df_client_new.append(new_row_df, ignore_index=True)
 

@@ -257,7 +257,9 @@ with clien:
     
     id_client=st.text_input("Ingresa tu ID")
     df_client=df_fix[df_fix["ID"] == str(id_client)]
-    df_client_new=df_client[["NOMBRE_CLIENTE","NUM_SN","ESTADO","FECHA_INGRESO","FECHA_EVALUACIÓN","FECHA_REPAR","FECHA_LISTO","FECHA_ENTREGA"]]
+    columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","ESTADO":"Estado","FECHA_INGRESO":"Reparacion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
+    df_client_new=df_client[list(columns_client.items())[0]]
+
 
     st.table(df_client_new)
 

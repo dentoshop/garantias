@@ -158,7 +158,7 @@ with empp:
             row_mod=df_fix[df_fix['ID'] == id_buscar].index[0]
 
             
-            valores_mod=df_fix[(df_fix['ID'] == str(row_mod)) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
+            valores_mod=df_fix[(df_fix['ID'] == id_buscar) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
             valores_mod2=copy(valores_mod)
   
             st.write(f"Nombre:  {valores_mod[2]}")

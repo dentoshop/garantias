@@ -249,10 +249,9 @@ with empp:
             a=df_fix.iloc[row_mod]
             a=pd.DataFrame(a)
             a.replace(to_replace=['null',None], value='', inplace=True)
-            st.write(type(a))
             a.style.set_table_styles([{'selector': 'thead', 'props': [('display', 'none')]}])
 
-            st.dataframe( a,use_container_width=True)
+            st.dataframe(a.style.set_table_styles([{'selector': 'thead', 'props': [('display', 'none')]}]),use_container_width=True)
 
     else: "Contraseña incorrecta"
 

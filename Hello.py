@@ -255,7 +255,8 @@ with empp:
 
             st.dataframe(a,use_container_width=True,height=775)
 
-    else: "Contraseña incorrecta"
+    else: 
+        st.write("Contraseña incorrecta")
 
 with clien:
 

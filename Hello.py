@@ -252,7 +252,7 @@ with empp:
             a.columns=[""]
 
             st.write(len(a))
-            st.dataframe(a,use_container_width=True,height=len(a))
+            st.dataframe(a,use_container_width=True,height=500)
 
     else: "Contraseña incorrecta"
 

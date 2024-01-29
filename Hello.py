@@ -264,8 +264,9 @@ with clien:
     df_client=df_fix[df_fix["ID"] == str(id_client)]
     columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","ESTADO":"Estado","FECHA_INGRESO":"Reparacion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
     df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
+    df_client_new.rename(columns=columns_client, inplace=True)
     df_client_new.replace(to_replace=['null',None], value='', inplace=True)
-    #df_client_new.rename(columns=columns_client, inplace=True)
+    
     st.write(df_client_new.shape)
     st.write(df_client_new.columns)
     st.write(type(df_client_new))

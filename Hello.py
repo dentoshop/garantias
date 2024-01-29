@@ -162,6 +162,7 @@ with empp:
             st.write(f"Motivo:  {valores_mod[11]}")
             st.write(f"Garantia:  {valores_mod[12]}")
 
+
             lista_estado_mod=['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado']
 
             try:
@@ -171,13 +172,8 @@ with empp:
             except:
                 pass
 
-            st.write(valores_mod[14])
-            st.write(lista_estado_mod)
-
-            try:
-                estado_mod=st.selectbox("Estado",lista_estado_mod,placeholder=valores_mod[14])
-            except Exception:
-                estado_mod=st.selectbox("Estado",lista_estado_mod,placeholder="")
+            estado_mod=st.selectbox("Estado",lista_estado_mod)
+            
 
             
             
@@ -192,7 +188,19 @@ with empp:
 
                 costo_reparacion=0
 
-            devo=st.selectbox("¿Habra devolucion?",['Si','No'])
+
+            lista_devo=['No','Si']
+
+            try:
+                if valores_mod[16] in lista_devo:
+                    lista_devo.remove(valores_mod[16])
+                    lista_devo=[valores_mod[16]]+lista_devo
+            except:
+                pass
+
+            devo=st.selectbox("¿Pidio devolucion?",lista_devo)
+
+            
             result=st.selectbox("Entrega",['Entregado','No Entregado'])
             
 

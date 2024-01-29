@@ -269,7 +269,7 @@ with clien:
     st.dataframe(df_client_new)
 
     new_rows=["","",""]
-    st.write(df_client_new[list(columns_client.values())[i+2]])
+    st.write(df_client_new[list(columns_client.values())[1+2]])
     for i in range(1,6):
         if df_client_new[list(columns_client.values())[i+2]]:
             a=1

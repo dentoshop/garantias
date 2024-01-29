@@ -266,26 +266,21 @@ with clien:
     df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
     df_client_new.rename(columns=columns_client, inplace=True)
     df_client_new.replace(to_replace=['null',None], value='', inplace=True)
-    
-    st.dataframe(df_client_new)
 
     new_rows=["","",""]
-    st.write(list(columns_client.values()))
-    st.write(df_client_new[list(columns_client.values())[3]])
     for i in range(1,6):
-        if df_client_new[list(columns_client.values())[i+2]]:
-            a=1
-
-    # New row as a list
-    new_row_list = [4, 'd', 7]
+        if df_client_new[list(columns_client.values())[i+2]]!="":
+            new_rows=new_rows+["✅"]
+        else:
+            new_rows=new_rows+[""]
 
     # Convert the list to a DataFrame
-    new_row_df = pd.DataFrame([new_row_list], columns=df_client_new.columns)
+    new_row_df = pd.DataFrame([new_rows], columns=df_client_new.columns)
 
     # Append the new DataFrame to the original DataFrame
-    df = df.append(new_row_df, ignore_index=True)
+    df_client_new = df_client_new.append(new_row_df, ignore_index=True)
 
-    
+    st.dataframe(df_client_new,hide_index=True)
 
     st.write("Ingresa un numero")
 

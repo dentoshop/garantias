@@ -268,7 +268,22 @@ with clien:
 
     st.dataframe(df_client_new)
 
-    #st.table(df_client_new)
+    new_rows=["","",""]
+    st.write(df_client_new[list(columns_client.values())[i+2]])
+    for i in range(1,6):
+        if df_client_new[list(columns_client.values())[i+2]]:
+            a=1
+
+    # New row as a list
+    new_row_list = [4, 'd', 7]
+
+    # Convert the list to a DataFrame
+    new_row_df = pd.DataFrame([new_row_list], columns=df_client_new.columns)
+
+    # Append the new DataFrame to the original DataFrame
+    df = df.append(new_row_df, ignore_index=True)
+
+    
 
     st.write("Ingresa un numero")
 

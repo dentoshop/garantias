@@ -248,7 +248,8 @@ with empp:
 
             a=df_fix.iloc[row_mod]
             a.replace(to_replace=['null',None], value='', inplace=True)
-            st.dataframe(a.style.hide_columns(),use_container_width=st.session_state.use_container_width)
+
+            st.dataframe(a.style.hide(axis="columns") ,use_container_width=st.session_state.use_container_width)
 
     else: "Contraseña incorrecta"
 
@@ -259,6 +260,8 @@ with clien:
     df_client=df_fix[df_fix["ID"] == str(id_client)]
     columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","ESTADO":"Estado","FECHA_INGRESO":"Reparacion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
     df_client_new=df_client[list(columns_client.keys())]
+
+
     st.dataframe(df_client_new)
 
     #st.table(df_client_new)

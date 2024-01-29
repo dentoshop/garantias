@@ -250,7 +250,7 @@ with empp:
             a=pd.DataFrame(a)
             a.replace(to_replace=['null',None], value='', inplace=True)
             st.write(type(a))
-            a=a.style.hide_columns()
+            a.style.hide_columns()
 
             st.dataframe( a,use_container_width=st.session_state.use_container_width)
 

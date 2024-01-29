@@ -278,15 +278,8 @@ with clien:
 
     st.write(new_rows)
 
-    # Convert the list to a DataFrame
-    new_row_df = pd.DataFrame([new_rows], columns=df_client_new.columns)
+    df_client_new.loc[len(df_client_new.index)] = new_rows
 
-    st.write(new_row_df)
-    st.write(type(new_row_df))
-
-
-    # Append the new DataFrame to the original DataFrame
-    df_client_new = df_client_new.append(new_row_df, ignore_index=True)
 
     st.dataframe(df_client_new,hide_index=True)
 

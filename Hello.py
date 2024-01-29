@@ -164,9 +164,12 @@ with empp:
 
             lista_estado_mod=['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado']
 
-            if valores_mod[14] in lista_estado_mod:
-                lista_estado_mod.remove("hola")
-                lista_estado_mod=[valores_mod[14]]+lista_estado_mod
+            try:
+                if valores_mod[14] in lista_estado_mod:
+                    lista_estado_mod.remove(valores_mod[14])
+                    lista_estado_mod=[valores_mod[14]]+lista_estado_mod
+            except:
+                pass
 
             st.write(valores_mod[14])
 

@@ -279,7 +279,7 @@ with clien:
     df_client_new.loc[len(df_client_new.index)] = new_rows
 
 
-    st.dataframe(df_client_new.T,hide_index=True)
+    st.dataframe(df_client_new.T)
 
     st.write("Ingresa un numero")
 

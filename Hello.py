@@ -276,6 +276,8 @@ with clien:
         else:
             new_rows=new_rows+[""]
 
+    st.write(new_rows)
+
     # Convert the list to a DataFrame
     new_row_df = pd.DataFrame([new_rows], columns=df_client_new.columns)
 

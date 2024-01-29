@@ -281,7 +281,7 @@ with clien:
 
         st.dataframe(df_client_new)
     except:
-        st.write("Ingresa un numero")
+        st.write("Ingresa un numero valido")
 
 
 

@@ -162,11 +162,20 @@ with empp:
             st.write(f"Motivo:  {valores_mod[11]}")
             st.write(f"Garantia:  {valores_mod[12]}")
 
+            lista_estado_mod=['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado']
+
+            if valores_mod[14] in lista_estado_mod:
+                lista_estado_mod.remove("hola")
+                lista_estado_mod=[valores_mod[14]]+lista_estado_mod
+
             st.write(valores_mod[14])
+
             try:
-                estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder=valores_mod[14])
+                estado_mod=st.selectbox("Estado",lista_estado_mod,placeholder=valores_mod[14])
             except Exception:
-                estado_mod=st.selectbox("Estado",['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado'],placeholder="")
+                estado_mod=st.selectbox("Estado",lista_estado_mod,placeholder="")
+
+            
             
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod).strftime("%d/%m/%Y")

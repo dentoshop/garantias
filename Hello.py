@@ -11,6 +11,7 @@ import streamlit as st
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
+import random
 
 st.title("Dentoshop")
 #----------------------------------------------------------------------
@@ -77,7 +78,15 @@ with empp:
 
         with tab1:
 
-            id=int(df_fix.iloc[maxrow-3,0])+1
+            #id=int(df_fix.iloc[maxrow-3,0])+1
+            def id_gen(list):
+                while True:
+                    random_number = random.randint(100000, 999999)
+                    if random_number not in list:
+                        return random_number
+
+            id=int(id_gen(df_fix["ID"]))
+
             st.subheader(f"ID: {id}",)
 
 

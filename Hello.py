@@ -172,6 +172,7 @@ with empp:
                 pass
 
             st.write(valores_mod[14])
+            st.write(lista_estado_mod)
 
             try:
                 estado_mod=st.selectbox("Estado",lista_estado_mod,placeholder=valores_mod[14])

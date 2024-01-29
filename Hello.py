@@ -256,7 +256,7 @@ with clien:
 
     try:
         id_client=st.text_input("Ingresa tu ID")
-        df_client=df[df["ID"] == int(id_client)]
+        df_client=df[df["ID"] == str(id_client)]
         st.table(df_client)
     except:
         st.write("Ingresa un numero")

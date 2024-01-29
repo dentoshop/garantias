@@ -268,7 +268,7 @@ with clien:
     df_client_new.rename(columns=columns_client, inplace=True)
 
     st.write(type(df_client_new))
-    st.table(df_client_new)
+    st.dataframe(df_client_new)
 
     new_rows=["","",""]
     st.write(list(columns_client.values()))

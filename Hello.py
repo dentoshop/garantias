@@ -268,8 +268,8 @@ with clien:
     df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
     st.dataframe(df_client_new)
+
     new_rows=["","",""]
-    st.write(type(df_client_new[list(columns_client.values())[1+2]]))
     for i in range(1,6):
         if str(df_client_new[list(columns_client.values())[i+2]])!="":
             new_rows=new_rows+["✅"]
@@ -282,6 +282,8 @@ with clien:
     new_row_df = pd.DataFrame([new_rows], columns=df_client_new.columns)
 
     st.write(new_row_df)
+    st.write(type(new_row_df))
+
 
     # Append the new DataFrame to the original DataFrame
     df_client_new = df_client_new.append(new_row_df, ignore_index=True)

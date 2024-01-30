@@ -12,7 +12,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import random
-
+st.write(os.getcwd())
 st.image("LOGO DENTOSHOP.PNG")
 #----------------------------------------------------------------------
 

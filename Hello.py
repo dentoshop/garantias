@@ -13,7 +13,7 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import random
 
-st.title("Dentoshop")
+st.image("LOGO DENTOSHOP.PNG")
 #----------------------------------------------------------------------
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']

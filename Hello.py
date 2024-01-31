@@ -186,11 +186,9 @@ with empp:
             
 
             
-            
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
             fecha_mod=pd.to_datetime(fecha_mod).strftime("%d/%m/%Y")
 
-            #-------------------------------------------------------------------------------------
 
             if valores_mod[12] == "No":
                 
@@ -206,9 +204,6 @@ with empp:
 
                 costo_reparacion=0.00
 
-                
-            st.write(costo_reparacion)
-            #-------------------------------------------------------------------------------------
             
             lista_devo=['No','Si']
 

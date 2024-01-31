@@ -200,9 +200,11 @@ with empp:
                 
                 on_mod_costrep = st.toggle('Habra un costo por la reparación?')
 
-                if on:
+                if on_mod_costrep:
 
                     costo_reparacion=st.number_input('Costo de la reparacion')
+
+                
 
             #-------------------------------------------------------------------------------------
             

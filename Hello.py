@@ -204,6 +204,8 @@ with empp:
 
                     costo_reparacion=st.number_input('Costo de la reparacion')
 
+                costo_reparacion=0.00
+
                 
             st.write(costo_reparacion)
             #-------------------------------------------------------------------------------------

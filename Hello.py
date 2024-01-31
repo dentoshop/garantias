@@ -205,7 +205,7 @@ with empp:
                     costo_reparacion=st.number_input('Costo de la reparacion')
 
                 
-
+            st.write(costo_reparacion)
             #-------------------------------------------------------------------------------------
             
             lista_devo=['No','Si']

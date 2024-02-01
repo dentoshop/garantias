@@ -303,11 +303,11 @@ with clien:
 
 
     row_heights = {5: '400px'}
-    st.write(row_heights[1])
+    st.write(row_heights[5])
     custom_html = f"""
     <style>
         .dataframe tr:nth-child({list(row_heights.keys())[0]}) {{
-            height: {row_heights[1]};
+            height: {row_heights[5]};
         }}
     </style>
     """

@@ -304,12 +304,12 @@ with clien:
     df_client_new.loc[len(df_client_new.index)] = new_rows
     df_client_new=df_client_new.T
 
-
+    '''
     try:
         df_client_new.columns=[""," "] 
     except:
         df_client_new.columns=[""]
-
+    '''
 
     row_heights = {1: 100}  # Change the row index and height as needed
 

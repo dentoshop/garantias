@@ -299,12 +299,15 @@ with clien:
         else:
             new_rows=new_rows+[""]
 
-    st.dataframe(df_client_new)
+
     df_client_new.loc[len(df_client_new.index)] = new_rows
     df_client_new=df_client_new.T
 
-    st.dataframe(df_client_new)
-    df_client_new.columns=[""," "] 
+
+    try:
+        df_client_new.columns=[""," "] 
+    except:
+        pass
 
 
     row_heights = {1: 100}  # Change the row index and height as needed

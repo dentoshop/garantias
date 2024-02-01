@@ -292,7 +292,7 @@ with clien:
 
     new_rows=["","","",""]
 
-    st.write(df_client_new[list(columns_client.values())[2+2]].iloc[0]))
+    st.write(df_client_new[list(columns_client.values())[2+2]].iloc[0])
 
     for i in range(2,7):
         if str(df_client_new[list(columns_client.values())[i+2]].iloc[0])!="":

@@ -312,7 +312,7 @@ with clien:
         df_client_new.columns=["",""]
    
 
-    fig = go.Figure(data=[go.Table(header=dict(values=[], visible=False)),
+    fig = go.Figure(data=[go.Table(header=dict(values=[],visible=False),
                                 cells=dict(values=df_client_new.transpose().values))])
 
 

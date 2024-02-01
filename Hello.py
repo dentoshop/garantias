@@ -141,7 +141,6 @@ with empp:
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
 
-
             on = st.toggle('Mostrar ultimos 10 ingresos')
 
             if on:
@@ -247,7 +246,15 @@ with empp:
 
             RANGE_NAME_MOD=f"Fill!A{row_mod+2}"
 
-            boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
+            #boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
+
+            if st.button('Modificar'):
+                llenar(valores_mod2,RANGE_NAME_MOD)
+                st.rerun()
+
+
+
+
 
             a=df_fix.iloc[row_mod]
             a=pd.DataFrame(a)

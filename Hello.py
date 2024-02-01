@@ -288,12 +288,12 @@ with clien:
             else:
                 new_rows=new_rows+[""]
 
-        st.dataframe(new_rows)
 
         df_client_new.loc[len(df_client_new.index)] = new_rows
         df_client_new=df_client_new.T
         df_client_new.columns=[""," "] 
 
+        st.dataframe(df_client_new)
 
     except:
         st.write("Ingresa un numero valido")

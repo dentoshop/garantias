@@ -215,7 +215,10 @@ with empp:
                 pass
 
 
-            if :
+            if valores_mod[21] not in [None,"",'null']:
+                diag=st.text_input("Ingresar diagnostico",value=valores_mod[21])
+            else:
+                diag=st.text_input("Ingresar diagnostico")
 
 
             devo=st.selectbox("¿Pidio devolucion?",lista_devo)          

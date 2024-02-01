@@ -192,7 +192,7 @@ with empp:
 
             if valores_mod[12] == "No":
                 
-                costo_reparacion=st.number_input('Costo de la reparacion')
+                costo_reparacion=st.number_input('Costo de la reparacion',value=valores_mod[15])
 
             else:
                 
@@ -200,7 +200,7 @@ with empp:
 
                 if on_mod_costrep:
 
-                    costo_reparacion=st.number_input('Costo de la reparacion')
+                    costo_reparacion=st.number_input('Costo de la reparacion',value=valores_mod[15])
 
                 costo_reparacion=0.00
 

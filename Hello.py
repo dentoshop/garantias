@@ -215,6 +215,9 @@ with empp:
                 pass
 
 
+            st.write(valores_mod[21])
+            st.write(valores_mod2[21])
+
             if valores_mod[21] not in [None,"",'null']:
                 diag=st.text_input("Ingresar diagnostico",value=valores_mod[21])
             else:

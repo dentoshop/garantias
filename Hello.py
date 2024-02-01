@@ -32,7 +32,7 @@ KEY ={
 }
 
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
-RANGE_NAME_GET="Fill!A:U"
+RANGE_NAME_GET="Fill!A:V"
 
 
 creds = None
@@ -137,7 +137,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","",""]
+            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","","",""]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
 
@@ -213,6 +213,10 @@ with empp:
                     lista_devo=[valores_mod[16]]+lista_devo
             except:
                 pass
+
+
+            if :
+
 
             devo=st.selectbox("¿Pidio devolucion?",lista_devo)          
 

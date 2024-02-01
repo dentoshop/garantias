@@ -313,7 +313,7 @@ with clien:
 
     row_heights = {1: 100}  # Change the row index and height as needed
 
-    st.write(df_client_new.values)
+    st.write(df_client_new.values.shape)
     # Create a Plotly figure
     fig = go.Figure(data=[go.Table(header=dict(values=df_client_new.columns),
                                cells=dict(values=df_client_new.values))])

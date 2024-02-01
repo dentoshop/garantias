@@ -217,8 +217,10 @@ with empp:
 
             
             diag=st.text_input("Ingresar diagnostico",value=valores_mod[21])
+            valores_mod2[21]=diag
 
-            devo=st.selectbox("¿Pidio devolucion?",lista_devo)          
+            devo=st.selectbox("¿Pidio devolucion?",lista_devo)
+                      
 
             
             if estado_mod == 'Recepcion':
@@ -252,7 +254,7 @@ with empp:
             valores_mod2[14]=estado_mod
             valores_mod2[15]=costo_reparacion
             valores_mod2[16]=devo
-            valores_mod2[21]=diag
+            
 
 
             RANGE_NAME_MOD=f"Fill!A{row_mod+2}"

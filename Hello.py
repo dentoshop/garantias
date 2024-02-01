@@ -267,7 +267,7 @@ with empp:
             a.replace(to_replace=['null',None], value='', inplace=True)
             a.columns=[""]
 
-            st.dataframe(a,use_container_width=True,height=775)
+            st.dataframe(a,use_container_width=True,height=815)
 
     else: 
         st.write("Contraseña incorrecta")

@@ -308,7 +308,7 @@ with clien:
     try:
         df_client_new.columns=[""," "] 
     except:
-        pass
+        df_client_new.columns=[""]
 
 
     row_heights = {1: 100}  # Change the row index and height as needed

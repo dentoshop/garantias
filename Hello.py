@@ -302,7 +302,7 @@ with clien:
     df_client_new.columns=[""," "] 
 
 
-    row_heights = {1: '100px'}
+    row_heights = {1: '400px'}
 
     custom_html = f"""
     <style>

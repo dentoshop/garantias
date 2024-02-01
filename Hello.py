@@ -249,9 +249,9 @@ with empp:
             #boton_mod=st.button("Modificar", on_click=llenar, args=(valores_mod2,RANGE_NAME_MOD,))
 
             if st.button('Modificar'):
-                llenar(valores_mod2,RANGE_NAME_MOD)
                 st.rerun()
-
+                llenar(valores_mod2,RANGE_NAME_MOD)
+            
 
 
 

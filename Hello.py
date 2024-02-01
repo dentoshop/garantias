@@ -205,7 +205,7 @@ with empp:
             diag=st.text_input("Ingresar diagnostico",value=valores_mod[21])
             valores_mod2[21]=diag
 
-
+            st.write(valores_mod[15])
             costo_reparacion=st.number_input('Costo de la reparacion',value=float(valores_mod[15]))
 
             devo=st.selectbox("¿Pidio devolucion?",lista_devo)

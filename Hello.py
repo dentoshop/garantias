@@ -205,7 +205,7 @@ with empp:
             valores_mod2[21]=diag
 
             costo_reparacion=st.number_input('Costo de la reparacion',value=float(valores_mod[15]))
-            
+
 
             devo=st.selectbox("¿Pidio devolucion?",lista_devo)
                       
@@ -272,27 +272,27 @@ with clien:
 
     
     id_client=st.text_input("Ingresa tu ID")
-    try:
-        df_client=df_fix[df_fix["ID"] == str(id_client)]
-        columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'DIAGNOSTICO',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
-        df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
-        df_client_new.rename(columns=columns_client, inplace=True)
-        df_client_new.replace(to_replace=['null',None], value='', inplace=True)
+    #try:
+    df_client=df_fix[df_fix["ID"] == str(id_client)]
+    columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'DIAGNOSTICO',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
+    df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
+    df_client_new.rename(columns=columns_client, inplace=True)
+    df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
-        new_rows=["","",""]
-        for i in range(1,6):
-            if str(df_client_new[list(columns_client.values())[i+2]].iloc[0])!="":
-                new_rows=new_rows+["✅"]
-            else:
-                new_rows=new_rows+[""]
+    new_rows=["","",""]
+    for i in range(1,6):
+        if str(df_client_new[list(columns_client.values())[i+2]].iloc[0])!="":
+            new_rows=new_rows+["✅"]
+        else:
+            new_rows=new_rows+[""]
 
-        df_client_new.loc[len(df_client_new.index)] = new_rows
-        df_client_new=df_client_new.T
-        df_client_new.columns=[""," "] 
+    df_client_new.loc[len(df_client_new.index)] = new_rows
+    df_client_new=df_client_new.T
+    df_client_new.columns=[""," "] 
 
-        st.dataframe(df_client_new)
-    except:
-        st.write("Ingresa un numero valido")
+    st.dataframe(df_client_new)
+    #except:
+    st.write("Ingresa un numero valido")
 
 
 

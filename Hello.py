@@ -315,8 +315,8 @@ with clien:
 
     st.write(df_client_new.values)
     # Create a Plotly figure
-    fig = go.Figure(data=[go.Table(df_client_new)
-    ])
+    fig = go.Figure(data=[go.Table(header=dict(values=df_client_new.columns),
+                               cells=dict(values=df_client_new.values))])
 
     # Adjust the height of the specified row
     

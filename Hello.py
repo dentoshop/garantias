@@ -266,6 +266,12 @@ with empp:
             a=pd.DataFrame(a)
             a.replace(to_replace=['null',None], value='', inplace=True)
             a.columns=[""]
+            a_last=a.iloc[-1]
+            a=a.drop(a.index[-1])
+            a=pd.concat([a.iloc[:15], pd.DataFrame([a_last]), a.iloc[15:]])
+
+
+
 
             st.dataframe(a,use_container_width=True,height=813)
 

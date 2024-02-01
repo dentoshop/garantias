@@ -306,12 +306,12 @@ with clien:
     row_heights = {1: 100}  # Change the row index and height as needed
 
     # Create a Plotly figure
-    fig = px.table(df)
+    fig = px.table(df_client_new)
 
     # Adjust the height of the specified row
     fig.update_layout(
         height=sum(row_heights.values()),
-        grid=dict(rowheights=[20] * (df.shape[0] - sum(row_heights.values())) + list(row_heights.values()))
+        grid=dict(rowheights=[20] * (df_client_new.shape[0] - sum(row_heights.values())) + list(row_heights.values()))
     )
 
     # Display the Plotly figure

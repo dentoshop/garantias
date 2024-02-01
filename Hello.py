@@ -306,7 +306,7 @@ with clien:
 
     custom_html = f"""
     <style>
-        .dataframe tr:nth-child({row_heights.keys()[0]}) {{
+        .dataframe tr:nth-child({list(row_heights.keys())[0]}) {{
             height: {row_heights[1]};
         }}
     </style>

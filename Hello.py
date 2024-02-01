@@ -13,6 +13,7 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import random
 import plotly.express as px
+import plotly.graph_objects as go
 
 st.image("LOGO DENTOSHOP.png", width=100)
 #----------------------------------------------------------------------
@@ -313,7 +314,14 @@ with clien:
     row_heights = {1: 100}  # Change the row index and height as needed
 
     # Create a Plotly figure
-    fig = px.table(df_client_new)
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(df_client_new.columns),
+                    fill_color='paleturquoise',
+                    align='left'),
+        cells=dict(values=list(df_client_new.values),
+                fill_color='lavender',
+                align='left'))
+    ])
 
     # Adjust the height of the specified row
     fig.update_layout(

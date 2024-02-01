@@ -324,10 +324,7 @@ with clien:
     ])
 
     # Adjust the height of the specified row
-    fig.update_layout(
-        height=sum(row_heights.values()),
-        grid=dict(rowheights=[20] * (df_client_new.shape[0] - sum(row_heights.values())) + list(row_heights.values()))
-    )
+    
 
     # Display the Plotly figure
     st.plotly_chart(fig)

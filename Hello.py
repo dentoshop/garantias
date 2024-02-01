@@ -12,6 +12,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import random
+import plotly.express as px
 
 st.image("LOGO DENTOSHOP.png", width=100)
 #----------------------------------------------------------------------
@@ -302,16 +303,29 @@ with clien:
     df_client_new.columns=[""," "] 
 
 
-    row_heights = {5: '400px'}
-    st.write(row_heights[5])
-    custom_html = f"""
-    <style>
-        .dataframe tr:nth-child({list(row_heights.keys())[0]}) {{
-            height: {row_heights[5]};
-        }}
-    </style>
-    """
-    st.markdown(custom_html, unsafe_allow_html=True)
+    row_heights = {1: 100}  # Change the row index and height as needed
+
+    # Create a Plotly figure
+    fig = px.table(df)
+
+    # Adjust the height of the specified row
+    fig.update_layout(
+        height=sum(row_heights.values()),
+        grid=dict(rowheights=[20] * (df.shape[0] - sum(row_heights.values())) + list(row_heights.values()))
+    )
+
+    # Display the Plotly figure
+    st.plotly_chart(fig)
+
+
+
+
+
+
+
+
+
+
 
     st.dataframe(df_client_new)
 

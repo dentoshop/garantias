@@ -282,7 +282,7 @@ with clien:
     st.dataframe(df_client_new)
 
     new_rows=["","",""]
-    for i in range(2,7):
+    for i in range(1,7):
         if str(df_client_new[list(columns_client.values())[i+2]].iloc[0])!="":
             new_rows=new_rows+["✅"]
         else:

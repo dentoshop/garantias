@@ -280,43 +280,43 @@ with clien:
 
     
     id_client=st.text_input("Ingresa tu ID")
-    try:
-        df_client=df_fix[df_fix["ID"] == str(id_client)]
-        columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'DIAGNOSTICO',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
-        df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
-        df_client_new.rename(columns=columns_client, inplace=True)
-        df_client_new.replace(to_replace=['null',None], value='', inplace=True)
+    #try:
+    df_client=df_fix[df_fix["ID"] == str(id_client)]
+    columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'DIAGNOSTICO',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
+    df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
+    df_client_new.rename(columns=columns_client, inplace=True)
+    df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
 
 
-        new_rows=["","","",""]
-        for i in range(2,7):
-            if str(df_client_new[list(columns_client.values())[i+2]].iloc[0])!="":
-                new_rows=new_rows+["✅"]
-            else:
-                new_rows=new_rows+[""]
+    new_rows=["","","",""]
+    for i in range(2,7):
+        if str(df_client_new[list(columns_client.values())[i+2]].iloc[0])!="":
+            new_rows=new_rows+["✅"]
+        else:
+            new_rows=new_rows+[""]
 
 
-        df_client_new.loc[len(df_client_new.index)] = new_rows
-        df_client_new=df_client_new.T
-        df_client_new.columns=[""," "] 
+    df_client_new.loc[len(df_client_new.index)] = new_rows
+    df_client_new=df_client_new.T
+    df_client_new.columns=[""," "] 
 
 
-        row_heights = {1: '100px'}
+    row_heights = {1: '100px'}
 
-        custom_html = f"""
-        <style>
-            .dataframe tr:nth-child({row_heights.keys()[0]}) {{
-                height: {row_heights[1]};
-            }}
-        </style>
-        """
-        st.markdown(custom_html, unsafe_allow_html=True)
+    custom_html = f"""
+    <style>
+        .dataframe tr:nth-child({row_heights.keys()[0]}) {{
+            height: {row_heights[1]};
+        }}
+    </style>
+    """
+    st.markdown(custom_html, unsafe_allow_html=True)
 
-        st.dataframe(df_client_new)
+    st.dataframe(df_client_new)
 
-    except:
-        st.write("Ingresa un numero valido")
+    #except:
+    st.write("Ingresa un numero valido")
 
 
 

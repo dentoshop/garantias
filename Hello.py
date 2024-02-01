@@ -190,19 +190,10 @@ with empp:
             fecha_mod=pd.to_datetime(fecha_mod).strftime("%d/%m/%Y")
 
 
-            if valores_mod[12] == "No":
+            
                 
-                costo_reparacion=st.number_input('Costo de la reparacion',value=float(valores_mod[15]))
+            costo_reparacion=st.number_input('Costo de la reparacion',value=float(valores_mod[15]))
 
-            else:
-                
-                on_mod_costrep = st.toggle('Habra un costo por la reparación?')
-
-                if on_mod_costrep:
-
-                    costo_reparacion=st.number_input('Costo de la reparacion',value=float(valores_mod[15]))
-
-                costo_reparacion=0.00
 
             
             lista_devo=['No','Si']

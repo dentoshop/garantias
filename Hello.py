@@ -311,7 +311,7 @@ with clien:
     except:
         df_client_new.columns=["",""]
    
-
+    st.write(df_client_new.transpose().iloc[0].values)
     fig = go.Figure(data=[go.Table(header=dict(values=[df_client_new.transpose().iloc[0].values]),
                                 cells=dict(values=df_client_new.transpose().iloc[1:].values))])
 

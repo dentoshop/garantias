@@ -299,11 +299,11 @@ with clien:
         else:
             new_rows=new_rows+[""]
 
-
+    st.dataframe(df_client_new)
     df_client_new.loc[len(df_client_new.index)] = new_rows
     df_client_new=df_client_new.T
 
-    st.dataframe('df_client_new')
+    st.dataframe(df_client_new)
     df_client_new.columns=[""," "] 
 
 

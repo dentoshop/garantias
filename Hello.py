@@ -301,6 +301,18 @@ with clien:
         df_client_new=df_client_new.T
         df_client_new.columns=[""," "] 
 
+
+        row_heights = {1: '100px'}
+
+        custom_html = f"""
+        <style>
+            .dataframe tr:nth-child({row_heights.keys()[0]}) {{
+                height: {row_heights[1]};
+            }}
+        </style>
+        """
+        st.markdown(custom_html, unsafe_allow_html=True)
+
         st.dataframe(df_client_new)
 
     except:

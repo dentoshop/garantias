@@ -312,8 +312,8 @@ with clien:
         df_client_new.columns=["",""]
    
     st.write(df_client_new.iloc[0].values)
-    fig = go.Figure(data=[go.Table(header=dict(values=[df_client_new.transpose().iloc[0].values]),
-                                cells=dict(values=df_client_new.transpose().iloc[1:].values))])
+    fig = go.Figure(data=[go.Table(header=dict(values=[df_client_new.iloc[0].transpose().values]),
+                                cells=dict(values=df_client_new.iloc[1:].transpose().values))])
 
 
     st.plotly_chart(fig)

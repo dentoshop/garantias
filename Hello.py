@@ -305,37 +305,22 @@ with clien:
     df_client_new=df_client_new.T
     df_client_new=df_client_new.reset_index()
 
-    '''
+    
     try:
-        df_client_new.columns=[""," "] 
+        df_client_new.columns=[""," ",""] 
     except:
-        df_client_new.columns=[""]
-    '''
+        df_client_new.columns=["",""]
+   
 
-    row_heights = {1: 100}  # Change the row index and height as needed
-
-    st.write(df_client_new.values.shape)
-    # Create a Plotly figure
     fig = go.Figure(data=[go.Table(header=dict(values=df_client_new.columns),
                                 cells=dict(values=df_client_new.transpose().values))])
 
-    # Adjust the height of the specified row
-    
 
-    # Display the Plotly figure
     st.plotly_chart(fig)
 
 
 
-
-
-
-
-
-
-
-
-    st.dataframe(df_client_new)
+    #st.dataframe(df_client_new)
 
     #except:
     st.write("Ingresa un numero valido")

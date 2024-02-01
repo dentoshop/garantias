@@ -255,6 +255,7 @@ with empp:
             valores_mod2[14]=estado_mod
             valores_mod2[15]=costo_reparacion
             valores_mod2[16]=devo
+            valores_mod2[21]=diag
 
 
             RANGE_NAME_MOD=f"Fill!A{row_mod+2}"
@@ -271,13 +272,16 @@ with empp:
     else: 
         st.write("Contraseña incorrecta")
 
+    st.divider()
+    st.caption('Contacto: franco.valero@pucp.edu.pe | 912085519')
+
 with clien:
 
     
     id_client=st.text_input("Ingresa tu ID")
     try:
         df_client=df_fix[df_fix["ID"] == str(id_client)]
-        columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
+        columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'DIAGNOSTICO',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
         df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
         df_client_new.rename(columns=columns_client, inplace=True)
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)

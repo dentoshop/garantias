@@ -302,8 +302,8 @@ with clien:
     df_client_new.columns=[""," "] 
 
 
-    row_heights = {1: '400px'}
-
+    row_heights = {5: '400px'}
+    st.write(row_heights[1])
     custom_html = f"""
     <style>
         .dataframe tr:nth-child({list(row_heights.keys())[0]}) {{

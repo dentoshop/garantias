@@ -63,7 +63,6 @@ def llenar(valores,rangea):
         valueInputOption='USER_ENTERED',
         body={'values': [valores]}
     )
-    st.rerun()
     return filling.execute()
 
 

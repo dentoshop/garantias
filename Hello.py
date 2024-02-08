@@ -296,7 +296,7 @@ with clien:
 
 
         for i in range(2,7):
-            if str(df_client_new[list(columns_client.values())[i+2]].iloc[0] or "")!="":
+            if str(df_client_new[list(columns_client.values())[i+3]].iloc[0] or "")!="":
                 new_rows=new_rows+["✅"]
             else:
                 new_rows=new_rows+[""]

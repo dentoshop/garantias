@@ -290,13 +290,13 @@ with clien:
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
         st.dataframe(df_client_new)
-
+        st.write(columns_client.values())
 
         new_rows=["","","",""]
 
 
         for i in range(2,7):
-            if str(df_client_new[list(columns_client.values())[i+3]].iloc[0] or "")!="":
+            if str(df_client_new[list(columns_client.values())[i+2]].iloc[0] or "")!="":
                 new_rows=new_rows+["✅"]
             else:
                 new_rows=new_rows+[""]

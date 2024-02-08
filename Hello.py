@@ -314,11 +314,11 @@ with clien:
 
         st.dataframe(df_client_new)
 
-        fig = go.Figure(data=[go.Table(header=dict(values=[]),
-                                    cells=dict(values=df_client_new.transpose().values))])
+        #fig = go.Figure(data=[go.Table(header=dict(values=[]),
+        #                           cells=dict(values=df_client_new.transpose().values))])
 
 
-        st.plotly_chart(fig)
+        #st.plotly_chart(fig)
 
 
 

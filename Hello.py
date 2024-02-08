@@ -305,7 +305,8 @@ with clien:
         df_client_new=df_client_new.T
         df_client_new=df_client_new.reset_index()
 
-        
+        st.dataframe(df_client_new)
+        '''
         try:
             df_client_new.columns=[""," ",""] 
         except:
@@ -320,7 +321,7 @@ with clien:
 
         #st.plotly_chart(fig)
 
-
+        '''
 
         #st.dataframe(df_client_new)
 

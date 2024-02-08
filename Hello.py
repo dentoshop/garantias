@@ -289,6 +289,7 @@ with clien:
         df_client_new.rename(columns=columns_client, inplace=True)
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
+        st.dataframe(df_client_new)
 
 
         new_rows=["","","",""]

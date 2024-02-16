@@ -297,13 +297,6 @@ with clien:
         df_client_new.rename(columns=columns_client, inplace=True)
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
-        st.dataframe(df_client_new)
-        st.dataframe(df_client_new.columns)
-        st.write(list(columns_client.values())[4])
-        st.write(list(columns_client.values())[6])
-        st.write(df_client_new.iloc[0, 4])
-        st.write(df_client_new.iloc[0, 2])
-
         new_rows=["","","",""]
 
 
@@ -312,9 +305,6 @@ with clien:
                     new_rows.append("✅")
                 else:
                     new_rows.append("")
-
-        st.write(new_rows)
-        st.dataframe(df_client_new)
 
         df_client_new=df_client_new.T
         df_client_new[''] = new_rows

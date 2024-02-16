@@ -318,7 +318,7 @@ with clien:
 
         df_client_new=df_client_new.T
         df_client_new[''] = new_rows
-        df_client_new=df_client_new.T
+        #df_client_new=df_client_new.T
         #df_client_new=df_client_new.reset_index()
 
         st.dataframe(df_client_new)

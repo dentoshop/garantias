@@ -302,6 +302,8 @@ with clien:
         st.dataframe(df_client_new.columns)
         st.write(list(columns_client.values())[4])
         st.write(list(columns_client.values())[6])
+        st.write(df_client_new.iloc[0, 4])
+
         new_rows=["","","",""]
 
 

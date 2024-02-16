@@ -14,6 +14,7 @@ from google.oauth2 import service_account
 import random
 import plotly.express as px
 import plotly.graph_objects as go
+import webbrowser
 
 st.image("LOGO DENTOSHOP.png", width=100)
 #----------------------------------------------------------------------
@@ -75,7 +76,7 @@ with empp:
     passw=st.text_input("Contraseña:",type="password")
 
     if passw==st.secrets["password"]:
-        tab1, tab2 = st.tabs(["Llenado", "Modificar"])
+        tab1, tab2 , tab3 = st.tabs(["Llenado", "Modificar","Dashboard"])
 
         with tab1:
 
@@ -272,11 +273,20 @@ with empp:
 
             st.dataframe(a,use_container_width=True,height=813)
 
+        with tab3:
+            def open_link():
+                webbrowser.open_new_tab('https://app.powerbi.com/view?r=eyJrIjoiNzMyNTNjMTktZGY1OS00MGE1LTlkYjctMTQ1YWYzOTdlNWNlIiwidCI6IjI0Mjk4MDU0LWI1YTYtNGNhMy05OGMyLTlmZDdlY2FjMWJmYSJ9')
+
+            st.button('Dashboard',on_click=open_link)
+
     else: 
         st.write("Contraseña incorrecta")
+        
 
     st.divider()
     st.caption('Contacto: franco.valero@pucp.edu.pe | 912085519')
+
+        
 
 with clien:
 

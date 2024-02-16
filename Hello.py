@@ -313,6 +313,7 @@ with clien:
                 else:
                     new_rows.append("")
 
+        st.write(new_rows)
         st.dataframe(df_client_new)
 
         df_client_new.loc[len(df_client_new.index)] = new_rows
@@ -320,24 +321,7 @@ with clien:
         df_client_new=df_client_new.reset_index()
 
         st.dataframe(df_client_new)
-        '''
-        try:
-            df_client_new.columns=[""," ",""] 
-        except:
-            df_client_new.columns=["",""]
-    
-
-        st.dataframe(df_client_new)
-
-        #fig = go.Figure(data=[go.Table(header=dict(values=[]),
-        #                           cells=dict(values=df_client_new.transpose().values))])
-
-
-        #st.plotly_chart(fig)
-
-        '''
-
-        #st.dataframe(df_client_new)
+      
 
     except:
         st.write("Ingresa un numero valido")

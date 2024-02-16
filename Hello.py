@@ -308,7 +308,7 @@ with clien:
 
 
         for i in range(2,7):
-                if str(df_client_new.iloc[0, i + 2]) != "":
+                if str(df_client_new.iloc[ i + 2,0]) != "":
                     new_rows.append("✅")
                 else:
                     new_rows.append("")

@@ -316,7 +316,8 @@ with clien:
         st.write(new_rows)
         st.dataframe(df_client_new)
 
-        df_client_new.loc[len(df_client_new.index)] = new_rows
+        df_client_new=df_client_new.T
+        df_client_new[''] = new_rows
         df_client_new=df_client_new.T
         df_client_new=df_client_new.reset_index()
 

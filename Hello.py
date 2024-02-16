@@ -299,16 +299,16 @@ with clien:
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
         st.dataframe(df_client_new)
-        st.write(list(columns_client.values()))
-
+        st.write(list(columns_client.values())[4])
+        st.write(list(columns_client.values())[6])
         new_rows=["","","",""]
 
 
         for i in range(2,7):
-            if str(df_client_new[list(columns_client.values())[i+2]].iloc[0] or "")!="":
-                new_rows=new_rows+["✅"]
-            else:
-                new_rows=new_rows+[""]
+                if str(df_client_new.iloc[0, i + 2]) != "":
+                    new_rows.append("✅")
+                else:
+                    new_rows.append("")
 
         st.write(type(new_rows))
         st.dataframe(df_client_new)

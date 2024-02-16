@@ -299,6 +299,7 @@ with clien:
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)
 
         st.dataframe(df_client_new)
+        st.dataframe(df_client_new.columns)
         st.write(list(columns_client.values())[4])
         st.write(list(columns_client.values())[6])
         new_rows=["","","",""]

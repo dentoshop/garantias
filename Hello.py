@@ -298,7 +298,7 @@ with empp:
 
 
 
-            st.dataframe(a,use_container_width=True,height=813)
+            st.dataframe(a,use_container_width=True,height=830)
 
         with tab3:
 

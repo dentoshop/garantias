@@ -332,7 +332,7 @@ with clien:
                     new_rows.append("✅")
                 else:
                     new_rows.append("")
-
+        st.write(df_client_new.iloc[0,6])
         exclusion=['','null',None]
         if df_client_new.iloc[0,6] in exclusion:
             df_client_new.drop(columns="Falta de repuesto", inplace=True)    

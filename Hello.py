@@ -172,7 +172,7 @@ with empp:
 
         #############################################
 
-            st.write(f"Garantia:  {valores_mod[12]}")
+            #st.write(f"Garantia:  {valores_mod[12]}")
 
 
 
@@ -197,7 +197,6 @@ with empp:
             Garantia=st.selectbox("¿Tiene garantía?",["Si","No"],index=indx)
 
             estado_mod=st.selectbox("Estado",lista_estado_mod)
-            
 
             
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
@@ -218,7 +217,10 @@ with empp:
             diag=st.text_input("Ingresar diagnostico",value=valores_mod[21])
             valores_mod2[21]=diag
 
-            costo_reparacion=st.number_input('Costo de la reparacion',value=float(valores_mod[15] or 0.00))
+
+            monto_pago_mod=st.number_input("Costo de la evaluacion",step=0.01,value=float(valores_mod[13] or 0.00))
+
+            costo_reparacion=st.number_input('Costo de la reparacion',step=0.01,value=float(valores_mod[15] or 0.00))
 
 
             devo=st.selectbox("¿Pidio devolucion?",lista_devo)
@@ -254,6 +256,7 @@ with empp:
 
 
             valores_mod2[14]=estado_mod
+            valores_mod2[13]=monto_pago_mod
             valores_mod2[15]=costo_reparacion
             valores_mod2[16]=devo
             

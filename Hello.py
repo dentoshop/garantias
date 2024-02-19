@@ -340,7 +340,7 @@ with clien:
     #df_client_new=df_client_new.T
     #df_client_new=df_client_new.reset_index()
     exclusion=['','null',None]  
-    if df_client_new.iloc[df.index.get_loc("Falta de repuesto"), 1] in exclusion:
+    if df_client_new.iloc[df_client_new.index.get_loc("Falta de repuesto"), 1] in exclusion:
         df_client_new.drop(index="Falta de repuesto", inplace=True) 
 
     st.table(df_client_new)

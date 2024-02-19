@@ -335,8 +335,8 @@ with clien:
     st.write(df_client_new.iloc[0,6])
     st.write(df_client_new["Falta de repuesto"])
     exclusion=['','null',None]
-    #if df_client_new.iloc[0,6] in exclusion:
-      #  df_client_new.drop(columns="Falta de repuesto", inplace=True)    
+    if df_client_new.iloc[0,6] in exclusion:
+        df_client_new.drop(columns="Falta de repuesto", inplace=True)    
     df_client_new
     df_client_new=df_client_new.T
     df_client_new[''] = new_rows

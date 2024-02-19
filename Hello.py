@@ -332,8 +332,6 @@ with clien:
                 new_rows.append("✅")
             else:
                 new_rows.append("")
-    st.write(df_client_new.iloc[0,6])
-    st.write(df_client_new["Falta de repuesto"])
    
     df_client_new=df_client_new.T
     df_client_new[''] = new_rows

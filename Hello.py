@@ -244,7 +244,7 @@ with empp:
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
-                valores_mod2[21] = fecha_mod
+                valores_mod2[22] = fecha_mod
             elif estado_mod == 'Reparacion':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = fecha_mod

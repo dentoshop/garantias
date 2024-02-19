@@ -232,13 +232,13 @@ with empp:
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
-                valores_mod2[21] = valores_mod[21]
+                valores_mod2[22] = valores_mod[22]
             elif estado_mod == 'Evaluacion':
                 valores_mod2[17] = fecha_mod
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
-                valores_mod2[21] = valores_mod[21]
+                valores_mod2[22] = valores_mod[22]
             elif estado_mod=='Falta de repuesto':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = valores_mod[18]
@@ -250,19 +250,19 @@ with empp:
                 valores_mod2[18] = fecha_mod
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
-                valores_mod2[21] = valores_mod[21]
+                valores_mod2[22] = valores_mod[22]
             elif estado_mod == 'Listo para Entrega':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = fecha_mod
                 valores_mod2[20] = valores_mod[20]
-                valores_mod2[21] = valores_mod[21]
+                valores_mod2[22] = valores_mod[22]
             elif estado_mod == 'Entregado':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = fecha_mod
-                valores_mod2[21] = valores_mod[21]
+                valores_mod2[22] = valores_mod[22]
 
 
 

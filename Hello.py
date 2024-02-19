@@ -194,7 +194,7 @@ with empp:
             else:
                 indx=None
 
-            Garantia=st.selectbox("¿Tiene garantía?",["Si","No"],index=indx)
+            Garantia=st.selectbox("¿Tiene garantía?",["Si","No"],index=indx,placeholder='Escoge una opcion')
 
             estado_mod=st.selectbox("Estado",lista_estado_mod)
 

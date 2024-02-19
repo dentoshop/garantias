@@ -337,7 +337,7 @@ with clien:
     exclusion=['','null',None]
     #if df_client_new.iloc[0,6] in exclusion:
       #  df_client_new.drop(columns="Falta de repuesto", inplace=True)    
-    
+    df_client_new
     df_client_new=df_client_new.T
     df_client_new[''] = new_rows
     #df_client_new=df_client_new.T

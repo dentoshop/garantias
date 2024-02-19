@@ -129,18 +129,14 @@ with empp:
 
                 Motivo=st.text_input("Motivo de Ingreso")
 
-                Garantia=st.selectbox("¿Tiene garantía?",["Si","No"])
+                #Garantia=st.selectbox("¿Tiene garantía?",["Si","No"])
 
-                if Garantia=="Si":
-                    monto_pago=0
-                elif Garantia=="No":
-
-                    with col1:
-                        monto_pago=st.number_input("Costo de la evaluacion",step=0.01)
+                monto_pago=st.number_input("Costo de la evaluacion",step=0.01)
 
             
 
-            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","","",""]
+            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,"",monto_pago,"Recepcion",0,"No","","","","",""]
+            #valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","","",""]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
 
@@ -172,9 +168,15 @@ with empp:
             st.write(f"Nombre del Equipo:  {valores_mod[8]}")
             st.write(f"Observaciones:  {valores_mod[10]}")
             st.write(f"Motivo:  {valores_mod[11]}")
+
+
+        #############################################
+
             st.write(f"Garantia:  {valores_mod[12]}")
 
 
+
+        #############################################
             lista_estado_mod=['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado']
 
             try:
@@ -183,6 +185,16 @@ with empp:
                     lista_estado_mod=[valores_mod[14]]+lista_estado_mod
             except:
                 pass
+            
+            
+            if valores_mod[12]=='Si':
+                indx=0
+            elif valores_mod[12]=='No':
+                indx=1
+            else:
+                indx=None
+
+            Garantia=st.selectbox("¿Tiene garantía?",["Si","No"],index=indx)
 
             estado_mod=st.selectbox("Estado",lista_estado_mod)
             
@@ -245,6 +257,7 @@ with empp:
             valores_mod2[15]=costo_reparacion
             valores_mod2[16]=devo
             
+            valores_mod2[12]=Garantia
 
 
             RANGE_NAME_MOD=f"Fill!A{row_mod+2}"

@@ -35,7 +35,7 @@ KEY ={
 }
 
 SPREADSHEET_ID = '1E3VWyZKoUdTUBPoZlNmudeGoiXx7uBNFTIzDuHX0iY8'
-RANGE_NAME_GET="Fill!A:V"
+RANGE_NAME_GET="Fill!A:W"
 
 
 creds = None
@@ -135,7 +135,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,"",monto_pago,"Recepcion",0,"No","","","","",""]
+            valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,"",monto_pago,"Recepcion",0,"No","","","","","",'']
             #valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","","",""]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
@@ -177,7 +177,7 @@ with empp:
 
 
         #############################################
-            lista_estado_mod=['Recepcion','Evaluacion','Reparacion','Listo para Entrega','Entregado']
+            lista_estado_mod=['Recepcion','Evaluacion','Falta de repuesto','Reparacion','Listo para Entrega','Entregado']
 
             try:
                 if valores_mod[14] in lista_estado_mod:
@@ -232,26 +232,37 @@ with empp:
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
+                valores_mod2[21] = valores_mod[21]
             elif estado_mod == 'Evaluacion':
                 valores_mod2[17] = fecha_mod
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
+                valores_mod2[21] = valores_mod[21]
+            elif estado_mod=='Falta de repuesto':
+                valores_mod2[17] = valores_mod[17]
+                valores_mod2[18] = valores_mod[18]
+                valores_mod2[19] = valores_mod[19]
+                valores_mod2[20] = valores_mod[20]
+                valores_mod2[21] = fecha_mod
             elif estado_mod == 'Reparacion':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = fecha_mod
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = valores_mod[20]
+                valores_mod2[21] = valores_mod[21]
             elif estado_mod == 'Listo para Entrega':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = fecha_mod
                 valores_mod2[20] = valores_mod[20]
+                valores_mod2[21] = valores_mod[21]
             elif estado_mod == 'Entregado':
                 valores_mod2[17] = valores_mod[17]
                 valores_mod2[18] = valores_mod[18]
                 valores_mod2[19] = valores_mod[19]
                 valores_mod2[20] = fecha_mod
+                valores_mod2[21] = valores_mod[21]
 
 
 
@@ -308,7 +319,7 @@ with clien:
     id_client=st.text_input("Ingresa tu ID")
     try:
         df_client=df_fix[df_fix["ID"] == str(id_client)]
-        columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'Diagnostico',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
+        columns_client={"NOMBRE_CLIENTE":"Nombre","NUM_SN":"Numero de Serie","DIAGNOSTICO":'Diagnostico',"ESTADO":"Estado","FECHA_INGRESO":"Recepcion","FECHA_EVALUACIÓN":"Evaluacion","FECHA_REPUESTO":"Falta de repuesto","FECHA_REPAR":"Reparacion","FECHA_LISTO":"Listo para Entrega","FECHA_ENTREGA":"Entregado"}
         df_client_new=pd.DataFrame(df_client[list(columns_client.keys())])
         df_client_new.rename(columns=columns_client, inplace=True)
         df_client_new.replace(to_replace=['null',None], value='', inplace=True)

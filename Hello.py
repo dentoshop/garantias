@@ -311,7 +311,7 @@ with clien:
         #df_client_new=df_client_new.T
         #df_client_new=df_client_new.reset_index()
 
-        st.dataframe(df_client_new)
+        st.table(df_client_new)
       
 
     except:

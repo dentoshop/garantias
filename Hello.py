@@ -151,13 +151,13 @@ with empp:
 
 
         with tab2:
-            num_sn_buscar=st.selectbox("Ingresar número de serie",df_fix["NUM_SN"].drop_duplicates())
+            #num_sn_buscar=st.selectbox("Ingresar número de serie",df_fix["NUM_SN"].drop_duplicates())
 
-            id_buscar=st.selectbox("Selecciona el ID",df_fix[df_fix['NUM_SN'] == num_sn_buscar]["ID"])   
+            id_buscar=st.selectbox("Selecciona el ID",df_fix["ID"].drop_duplicates())   
             row_mod=df_fix[df_fix['ID'] == id_buscar].index[0]
 
             
-            valores_mod=df_fix[(df_fix['ID'] == id_buscar) & (df_fix['NUM_SN'] == num_sn_buscar)].iloc[0].values.tolist()
+            valores_mod=df_fix[df_fix['ID'] == id_buscar].iloc[0].values.tolist()
             valores_mod2=copy(valores_mod)
   
             st.write(f"Nombre:  {valores_mod[2]}")

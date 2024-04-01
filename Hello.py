@@ -60,7 +60,7 @@ maxrow=df_index[-1]+3
 RANGE_NAME_FILL=f"Fill!A{maxrow}"
 
 def llenar(valores,rangea):
-    filling = service.spreadsheets().values().update(
+    filling = service.spreadsheets().values().append(
         spreadsheetId=SPREADSHEET_ID,
         range=rangea,
         valueInputOption='USER_ENTERED',

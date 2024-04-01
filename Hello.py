@@ -309,7 +309,7 @@ with empp:
         
 
     st.divider()
-    st.caption('Contacto: franco.valero@pucp.edu.pe | 912085519')
+    st.caption('Contacto: postventa1@dentoshop.pe o postventa2@dentoshop.pe | 957755355')
 
         
 

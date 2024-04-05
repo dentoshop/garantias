@@ -144,7 +144,7 @@ with empp:
 
             
 
-            valores=[id,fecha_ing1.strftime("%Y-%B-%d"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,"",monto_pago,"Recepcion",0,"No","","","","","",'']
+            valores=[id,fecha_ing1.strftime("%Y-%b-%d"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,"",monto_pago,"Recepcion",0,"No","","","","","",'']
             #valores=[id,fecha_ing1.strftime("%d/%m/%Y"),Nom_Apell,Dni,Ruc,Num,Email,Num_sn,Nom_Equip,Accesorios,Obs,Motivo,Garantia,monto_pago,"Recepcion",0,"No","","","","",""]
             
             boton_fill=st.button("Llenar", on_click=llenar, args=(valores,RANGE_NAME_FILL,))
@@ -209,7 +209,7 @@ with empp:
 
             
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
-            fecha_mod=pd.to_datetime(fecha_mod).strftime("%Y-%B-%d")
+            fecha_mod=pd.to_datetime(fecha_mod).strftime("%Y-%b-%d")
 
 
             

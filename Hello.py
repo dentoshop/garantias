@@ -68,6 +68,15 @@ def llenar(valores,rangea):
     )
     return filling.execute()
 
+def llenar_2(valores,rangea):
+    filling = service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID,
+        range=rangea,
+        valueInputOption='USER_ENTERED',
+        body={'values': [valores]}
+    )
+    return filling.execute()
+
 
 empp, clien = st.tabs(["Empresa","Seguimiento - Cliente"])
 
@@ -200,7 +209,7 @@ with empp:
 
             
             fecha_mod=st.date_input("Fecha de Modificacion",format="DD/MM/YYYY")
-            fecha_mod=pd.to_datetime(fecha_mod).strftime("%d/%m/%Y")
+            fecha_mod=pd.to_datetime(fecha_mod).strftime("%Y-%B-%d")
 
 
             
@@ -280,7 +289,7 @@ with empp:
 
             if st.button('Modificar'):
                 
-                llenar(valores_mod2,RANGE_NAME_MOD)
+                llenar_2(valores_mod2,RANGE_NAME_MOD)
                 st.rerun()
             
 

@@ -317,7 +317,7 @@ with empp:
         st.write("Contraseña incorrecta")
         
 
-    st.divider()
+    #st.divider()
     st.caption('Contacto: postventa1@dentoshop.pe o postventa2@dentoshop.pe | 957755355')
 
         

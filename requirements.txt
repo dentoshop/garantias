@@ -2,6 +2,6 @@ altair
 numpy
 pandas
 pydeck
-streamlit
+streamlit==1.34
 google-api-python-client
 plotly
